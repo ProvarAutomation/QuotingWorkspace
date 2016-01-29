@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testProject selectedBrowserConfigurationName="Full Screen">
+<testProject selectedBrowserConfigurationName="Full Screen" selectedEnvironment="Pricing">
   <title>/Quoting/.testproject</title>
   <configPath>config</configPath>
   <testsPath>tests</testsPath>
@@ -7,12 +7,23 @@
   <sourcePath>src</sourcePath>
   <secureStoragePath>.secrets</secureStoragePath>
   <browserDebugPort>0</browserDebugPort>
+  <environments>
+    <environment name="Quoting">
+      <summary>for Quoting/Pricing</summary>
+    </environment>
+    <environment name="Pricing">
+      <summary/>
+    </environment>
+  </environments>
   <connectionClasses>
     <connectionClass name="sf">
       <connections>
         <connection name="Admin">
+          <summary/>
           <connectionUrls>
-            <connectionUrl secureStorageNodeId="6d65152d-19e8-443d-91a1-d974600672a3" url="sf:user=provar.tester@coxauto.com.quoting;password={password};environment=SANDBOX"/>
+            <connectionUrl secureStorageNodeId="9a48d965-7876-48d5-b805-5d30e209902f" url="sf:user=provar.tester@coxauto.com.quoting;password={password};environment=SANDBOX"/>
+            <connectionUrl envName="Quoting" secureStorageNodeId="1b9d7efb-9c42-4ae1-a35c-c5e732931a73" url="sf:user=provar.tester@coxauto.com.quoting;password={password};environment=SANDBOX"/>
+            <connectionUrl envName="Pricing" secureStorageNodeId="bb430fa7-fde3-426a-b36f-4f67e6c691f7" url="sf:user=provar.tester@coxauto.com.pricing;password={password};environment=SANDBOX"/>
           </connectionUrls>
         </connection>
       </connections>
