@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase id="27">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" name="ApexConnect" testItemId="1" title="Salesforce Connect: Admin (Test)">
+      <arguments>
+        <argument id="connectionName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="uiApplicationName">
+          <value class="value" valueClass="string">ATC_Sales</value>
+        </argument>
+        <argument id="quickUiLogin">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="closeAllPrimaryTabs">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="reuseConnectionName"/>
+        <argument id="alreadyOpenBehaviour">
+          <value class="value" valueClass="string">Fail</value>
+        </argument>
+        <argument id="vfDebug"/>
+        <argument id="enableObjectIdLogging">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="autoCleanup"/>
+        <argument id="cleanupConnectionName"/>
+        <argument id="logFileLocation"/>
+        <argument id="username"/>
+        <argument id="password"/>
+        <argument id="environment"/>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexCreateObject" name="ApexCreateObject" parameterGeneratorUri="command:com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand" testItemId="3" title="Create Object: Opportunity=&gt;OpportunityId">
+      <arguments>
+        <argument id="objectType">
+          <value class="value" valueClass="string">Opportunity</value>
+        </argument>
+        <argument id="resultIdName">
+          <value class="value" valueClass="string">OpportunityId</value>
+        </argument>
+        <argument id="apexConnectionName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="AccountId">
+          <value class="value" valueClass="string">0011900000Dazi4AAB</value>
+        </argument>
+        <argument id="RecordTypeId">
+          <value class="value" valueClass="string">ATC</value>
+        </argument>
+        <argument id="Name">
+          <value class="value" valueClass="string">Crown KIA - ATC Media - Test Product Using Provar</value>
+        </argument>
+        <argument id="StageName">
+          <value class="value" valueClass="string">Prospect</value>
+        </argument>
+        <argument id="Amount">
+          <value class="value" valueClass="decimal">2000.0</value>
+        </argument>
+        <argument id="Probability">
+          <value class="value" valueClass="decimal">0.0</value>
+        </argument>
+        <argument id="CloseDate">
+          <value class="value" valueClass="date">1453939200000</value>
+        </argument>
+        <argument id="Type">
+          <value class="value" valueClass="string">New Business</value>
+        </argument>
+        <argument id="ForecastCategoryName">
+          <value class="value" valueClass="string">Prospect</value>
+        </argument>
+        <argument id="Pricebook2Id">
+          <value class="value" valueClass="string">01sE00000000vk4IAA</value>
+        </argument>
+        <argument id="BU__c">
+          <value class="value" valueClass="string">ATC Media</value>
+        </argument>
+        <argument id="Cost_Factor__c">
+          <value class="value" valueClass="decimal">1.0</value>
+        </argument>
+        <argument id="Product_Line__c">
+          <value class="value" valueClass="string">Provar 1-Weber2</value>
+        </argument>
+        <argument id="BU_Type__c">
+          <value class="value" valueClass="string">Media</value>
+        </argument>
+        <argument id="mti_pb__PriceBook_To_Use__c">
+          <value class="value" valueClass="string">ATC Price book</value>
+        </argument>
+        <argument id="assignmentRuleId"/>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+      </arguments>
+      <parameterGeneratorProperties>
+        <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.ConnectionName">Admin</propertyValue>
+        <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.CustomObjectName">Opportunity</propertyValue>
+      </parameterGeneratorProperties>
+      <generatedParameters>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=AccountId" name="AccountId" title="AccountId"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=RecordTypeId" name="RecordTypeId" title="RecordTypeId"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Name" name="Name" title="Name">
+          <summary>set by the system, please do not modify</summary>
+        </apiParam>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=StageName" name="StageName" title="StageName"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Amount" name="Amount" title="Amount"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Probability" name="Probability" title="Probability">
+          <summary>users can override the probability during a stage</summary>
+        </apiParam>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=CloseDate" name="CloseDate" title="CloseDate">
+          <summary>upon creation of Opportunity the system sets the close date to 30 days from the create date by workflow - user can update the date accordingly</summary>
+        </apiParam>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Type" name="Type" title="Type"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=ForecastCategoryName" name="ForecastCategoryName" title="ForecastCategoryName"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Pricebook2Id" name="Pricebook2Id" title="Pricebook2Id"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=BU__c" name="BU__c" title="BU__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Cost_Factor__c" name="Cost_Factor__c" title="Cost_Factor__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Product_Line__c" name="Product_Line__c" title="Product_Line__c">
+          <summary>The BU Type must be selected with the appropriate BU (i.e. ATC Media, KBB, TIM, vAuto,etc ) in order to be captured in reporting. The “Dealer Interested Product” field is only added to the opportunity title.</summary>
+        </apiParam>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=BU_Type__c" name="BU_Type__c" title="BU_Type__c"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=mti_pb__PriceBook_To_Use__c" name="mti_pb__PriceBook_To_Use__c" title="mti_pb__PriceBook_To_Use__c"/>
+      </generatedParameters>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="6" title="On SF Opportunity view screen">
+      <arguments>
+        <argument id="uiConnectionName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="target">
+          <value class="uiTarget" uri="sf:ui:target?object=Opportunity&amp;action=View"/>
+        </argument>
+        <argument id="targetDescription">
+          <value class="value" valueClass="string">On SF Opportunity view screen</value>
+        </argument>
+        <argument id="navigate">
+          <value class="value" valueClass="string">IfNeccessary</value>
+        </argument>
+        <argument id="windowSelection">
+          <value class="value" valueClass="string">Default</value>
+        </argument>
+        <argument id="windowSize">
+          <value class="value" valueClass="string">Default</value>
+        </argument>
+        <argument id="closeWindow"/>
+        <argument id="captureBefore"/>
+        <argument id="captureAfter"/>
+        <argument id="sfUiTargetObjectId">
+          <value class="variable">
+            <path element="OpportunityId"/>
+          </value>
+        </argument>
+        <argument id="Name"/>
+        <argument id="OpportunityId"/>
+      </arguments>
+      <clauses>
+        <clause name="substeps" testItemId="7">
+          <steps/>
+        </clause>
+      </clauses>
+      <generatedParameters>
+        <apiParam group="target" name="sfUiTargetObjectId" title="Object Id">
+          <summary>The Id of the SF Object to be Viewed or Edited.</summary>
+          <type>
+            <textType/>
+          </type>
+        </apiParam>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Quote&amp;field=Name" name="Name" title="Name"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Quote&amp;field=OpportunityId" name="OpportunityId" title="OpportunityId"/>
+      </generatedParameters>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexCreateObject" name="ApexCreateObject" parameterGeneratorUri="command:com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand" testItemId="9" title="Create Object: Quote=&gt;QuoteId">
+      <arguments>
+        <argument id="objectType">
+          <value class="value" valueClass="string">Quote</value>
+        </argument>
+        <argument id="resultIdName">
+          <value class="value" valueClass="string">QuoteId</value>
+        </argument>
+        <argument id="apexConnectionName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="Name">
+          <value class="value" valueClass="string">Test Quote</value>
+        </argument>
+        <argument id="OpportunityId">
+          <value class="variable">
+            <path element="OpportunityId"/>
+          </value>
+        </argument>
+        <argument id="Pricebook2Id">
+          <value class="value" valueClass="string">01sE00000000vk4IAA</value>
+        </argument>
+        <argument id="ContactId">
+          <value class="value" valueClass="string">0031900000Bf7MPAAZ</value>
+        </argument>
+        <argument id="ExpirationDate">
+          <value class="value" valueClass="date">1453939200000</value>
+        </argument>
+        <argument id="Description">
+          <value class="value" valueClass="string">Test Quote</value>
+        </argument>
+        <argument id="BillingStreet">
+          <value class="value" valueClass="string">6001 34TH ST N</value>
+        </argument>
+        <argument id="BillingCity">
+          <value class="value" valueClass="string">SAINT PETERSBURG</value>
+        </argument>
+        <argument id="BillingState">
+          <value class="value" valueClass="string">FL</value>
+        </argument>
+        <argument id="BillingPostalCode">
+          <value class="value" valueClass="string">33714-1251</value>
+        </argument>
+        <argument id="BillingCountry">
+          <value class="value" valueClass="string">USA</value>
+        </argument>
+        <argument id="BillingLatitude">
+          <value class="value" valueClass="decimal">27.827126</value>
+        </argument>
+        <argument id="BillingLongitude">
+          <value class="value" valueClass="decimal">-82.67901</value>
+        </argument>
+        <argument id="ShippingStreet">
+          <value class="value" valueClass="string">5500 34TH ST N</value>
+        </argument>
+        <argument id="ShippingCity">
+          <value class="value" valueClass="string">SAINT PETERSBURG</value>
+        </argument>
+        <argument id="ShippingState">
+          <value class="value" valueClass="string">FL</value>
+        </argument>
+        <argument id="ShippingPostalCode">
+          <value class="value" valueClass="string">33714-1829</value>
+        </argument>
+        <argument id="ShippingCountry">
+          <value class="value" valueClass="string">USA</value>
+        </argument>
+        <argument id="ShippingLatitude">
+          <value class="value" valueClass="decimal">27.822424</value>
+        </argument>
+        <argument id="ShippingLongitude">
+          <value class="value" valueClass="decimal">-82.680016</value>
+        </argument>
+        <argument id="BillingName">
+          <value class="value" valueClass="string">Crown KIA</value>
+        </argument>
+        <argument id="ShippingName">
+          <value class="value" valueClass="string">Crown KIA</value>
+        </argument>
+        <argument id="Email">
+          <value class="value" valueClass="string">test@test.com</value>
+        </argument>
+        <argument id="Phone">
+          <value class="value" valueClass="string">1231231234</value>
+        </argument>
+        <argument id="Fax">
+          <value class="value" valueClass="string">1231231234</value>
+        </argument>
+        <argument id="assignmentRuleId"/>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+      </arguments>
+      <parameterGeneratorProperties>
+        <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.ConnectionName">Admin</propertyValue>
+        <propertyValue name="com.provar.plugins.forcedotcom.ui.commands.CreateCustomObjectTestStepCommand.CustomObjectName">Quote</propertyValue>
+      </parameterGeneratorProperties>
+      <generatedParameters>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Quote&amp;field=Name" name="Name" title="Name"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Quote&amp;field=OpportunityId" name="OpportunityId" title="OpportunityId"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Quote&amp;field=Pricebook2Id" name="Pricebook2Id" title="Pricebook2Id"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Quote&amp;field=ContactId" name="ContactId" title="ContactId"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Quote&amp;field=ExpirationDate" name="ExpirationDate" title="ExpirationDate"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Quote&amp;field=Description" name="Description" title="Description"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Quote&amp;field=BillingStreet" name="BillingStreet" title="BillingStreet"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Quote&amp;field=BillingCity" name="BillingCity" title="BillingCity"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Quote&amp;field=BillingState" name="BillingState" title="BillingState"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Quote&amp;field=BillingPostalCode" name="BillingPostalCode" title="BillingPostalCode"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Quote&amp;field=BillingCountry" name="BillingCountry" title="BillingCountry"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Quote&amp;field=BillingLatitude" name="BillingLatitude" title="BillingLatitude"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Quote&amp;field=BillingLongitude" name="BillingLongitude" title="BillingLongitude"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Quote&amp;field=ShippingStreet" name="ShippingStreet" title="ShippingStreet"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Quote&amp;field=ShippingCity" name="ShippingCity" title="ShippingCity"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Quote&amp;field=ShippingState" name="ShippingState" title="ShippingState"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Quote&amp;field=ShippingPostalCode" name="ShippingPostalCode" title="ShippingPostalCode"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Quote&amp;field=ShippingCountry" name="ShippingCountry" title="ShippingCountry"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Quote&amp;field=ShippingLatitude" name="ShippingLatitude" title="ShippingLatitude"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Quote&amp;field=ShippingLongitude" name="ShippingLongitude" title="ShippingLongitude"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Quote&amp;field=BillingName" name="BillingName" title="BillingName"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Quote&amp;field=ShippingName" name="ShippingName" title="ShippingName"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Quote&amp;field=Email" name="Email" title="Email"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Quote&amp;field=Phone" name="Phone" title="Phone"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Quote&amp;field=Fax" name="Fax" title="Fax"/>
+      </generatedParameters>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="17" title="On SF Opportunity view screen">
+      <arguments>
+        <argument id="uiConnectionName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="target">
+          <value class="uiTarget" uri="sf:ui:target?object=Opportunity&amp;action=View"/>
+        </argument>
+        <argument id="targetDescription">
+          <value class="value" valueClass="string">On SF Opportunity view screen</value>
+        </argument>
+        <argument id="navigate">
+          <value class="value" valueClass="string">IfNeccessary</value>
+        </argument>
+        <argument id="windowSelection">
+          <value class="value" valueClass="string">Default</value>
+        </argument>
+        <argument id="windowSize">
+          <value class="value" valueClass="string">Default</value>
+        </argument>
+        <argument id="closeWindow"/>
+        <argument id="captureBefore"/>
+        <argument id="captureAfter"/>
+        <argument id="sfUiTargetObjectId">
+          <value class="variable">
+            <path element="OpportunityId"/>
+          </value>
+        </argument>
+        <argument id="Name"/>
+        <argument id="OpportunityId"/>
+      </arguments>
+      <clauses>
+        <clause name="substeps" testItemId="18">
+          <steps/>
+        </clause>
+      </clauses>
+      <generatedParameters>
+        <apiParam group="target" name="sfUiTargetObjectId" title="Object Id">
+          <summary>The Id of the SF Object to be Viewed or Edited.</summary>
+          <type>
+            <textType/>
+          </type>
+        </apiParam>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Quote&amp;field=Name" name="Name" title="Name"/>
+        <apiParam group="fields" modelBinding="sf:ui:binding:object?object=Quote&amp;field=OpportunityId" name="OpportunityId" title="OpportunityId"/>
+      </generatedParameters>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="10" title="On SF Opportunity view (ATC) screen">
+      <arguments>
+        <argument id="uiConnectionName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="target">
+          <value class="uiTarget" uri="sf:ui:target?object=Opportunity&amp;action=View&amp;recordType=ATC"/>
+        </argument>
+        <argument id="navigate">
+          <value class="value" valueClass="string">Always</value>
+        </argument>
+        <argument id="sfUiTargetObjectId">
+          <value class="value" valueClass="string">00619000003mlLYAAY</value>
+        </argument>
+        <argument id="targetDescription">
+          <value class="value" valueClass="string">On SF Opportunity view (ATC) screen</value>
+        </argument>
+        <argument id="windowSelection">
+          <value class="value" valueClass="string">Default</value>
+        </argument>
+        <argument id="windowSize">
+          <value class="value" valueClass="string">Default</value>
+        </argument>
+        <argument id="closeWindow"/>
+        <argument id="captureBefore"/>
+        <argument id="captureAfter"/>
+      </arguments>
+      <clauses>
+        <clause name="substeps" testItemId="11">
+          <steps>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithRow" name="UiWithRow" testItemId="12" title="With View/Quotes/QuotesTable {QUOTE_QUOTENUMBER = &quot;00000049&quot;}">
+              <arguments>
+                <argument id="uiConnectionName">
+                  <value class="value" valueClass="string">Admin</value>
+                </argument>
+                <argument id="locator">
+                  <value class="uiLocator" uri="sf:ui:locator:row?table=View%2FQuotes%2FQuotesTable"/>
+                </argument>
+                <argument id="uiRowLocator">
+                  <value class="eq">
+                    <lhs class="variable">
+                      <path element="QUOTE_QUOTENUMBER"/>
+                    </lhs>
+                    <rhs class="value" valueClass="string">00000049</rhs>
+                  </value>
+                </argument>
+                <argument id="locatorDescription">
+                  <value class="value" valueClass="string">With View/Quotes/QuotesTable {QUOTE_QUOTENUMBER = "00000049"}</value>
+                </argument>
+              </arguments>
+              <clauses>
+                <clause name="substeps" testItemId="13">
+                  <steps>
+                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="14" title="Click the QUOTE.QUOTENUMBER link">
+                      <arguments>
+                        <argument id="locator">
+                          <value class="uiLocator" uri="ui:locator?name=QUOTE_QUOTENUMBER&amp;rowLocator=QUOTE_QUOTENUMBER+%3D+%2700000049%27&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DOpportunity%26field%3DQUOTENUMBER%26relationship%3DQuotes"/>
+                        </argument>
+                        <argument id="interaction">
+                          <value class="uiInteraction" uri="ui:interaction?name=action"/>
+                        </argument>
+                        <argument id="hover">
+                          <value class="value" valueClass="boolean">false</value>
+                        </argument>
+                        <argument id="captureBefore">
+                          <value class="value" valueClass="boolean">false</value>
+                        </argument>
+                        <argument id="captureAfter">
+                          <value class="value" valueClass="boolean">false</value>
+                        </argument>
+                        <argument id="interactionDescription">
+                          <value class="value" valueClass="string">Click the QUOTE.QUOTENUMBER link</value>
+                        </argument>
+                      </arguments>
+                      <generatedParameters>
+                        <apiParam group="value" name="hover" title="Hover before Clicking">
+                          <summary>Whether the mouse should hover over the field before it is clicked.</summary>
+                          <type>
+                            <booleanType/>
+                          </type>
+                        </apiParam>
+                      </generatedParameters>
+                    </apiCall>
+                  </steps>
+                </clause>
+              </clauses>
+            </apiCall>
+          </steps>
+        </clause>
+      </clauses>
+      <generatedParameters>
+        <apiParam group="target" name="sfUiTargetObjectId" title="Object Id">
+          <summary>The Id of the SF Object to be Viewed or Edited.</summary>
+          <type>
+            <textType/>
+          </type>
+        </apiParam>
+      </generatedParameters>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="22" title="On SF Quote detail screen">
+      <arguments>
+        <argument id="uiConnectionName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="target">
+          <value class="uiTarget" uri="sf:ui:target?object=Quote&amp;action=View"/>
+        </argument>
+        <argument id="navigate">
+          <value class="value" valueClass="string">Always</value>
+        </argument>
+        <argument id="sfUiTargetObjectId">
+          <value class="value" valueClass="string">0Q0190000009u5H</value>
+        </argument>
+        <argument id="targetDescription">
+          <value class="value" valueClass="string">On SF Quote detail screen</value>
+        </argument>
+        <argument id="windowSelection">
+          <value class="value" valueClass="string">Default</value>
+        </argument>
+        <argument id="windowSize">
+          <value class="value" valueClass="string">Default</value>
+        </argument>
+        <argument id="closeWindow"/>
+        <argument id="captureBefore"/>
+        <argument id="captureAfter"/>
+      </arguments>
+      <clauses>
+        <clause name="substeps" testItemId="23">
+          <steps/>
+        </clause>
+      </clauses>
+      <generatedParameters>
+        <apiParam group="target" name="sfUiTargetObjectId" title="Object Id">
+          <summary>The Id of the SF Object to be Viewed or Edited.</summary>
+          <type>
+            <textType/>
+          </type>
+        </apiParam>
+      </generatedParameters>
+    </apiCall>
+  </steps>
+</testCase>

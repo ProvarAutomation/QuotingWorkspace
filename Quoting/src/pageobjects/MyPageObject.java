@@ -24,5 +24,23 @@ public class MyPageObject {
 	@ButtonType()
 	@FindByLabel(label = " Done ")
 	public WebElement done;
+	@ButtonType()
+	@FindByLabel(label = "Add Line Item")
+	public WebElement addLineItem;
+	@BooleanType()
+	@FindBy(xpath = "//*[@id=\"01uE0000000yILK\"]")
+	public WebElement select;
+	@ButtonType()
+	@FindByLabel(label = "Select")
+	public WebElement select1;
+	@TextType()
+	@FindByLabel(label = "Quantity")
+	public WebElement quantity;
+	@TextType()
+	@FindByLabel(label = "Sales Price")
+	public WebElement salesPrice;
+	@ButtonType()
+	@FindByLabel(label = " Save ")
+	public WebElement save;
 			
 }
