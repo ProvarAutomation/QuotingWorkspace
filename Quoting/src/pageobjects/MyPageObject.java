@@ -24,8 +24,9 @@ public class MyPageObject {
 	@ButtonType()
 	@FindByLabel(label = " Done ")
 	public WebElement done;
+	@FindBy(xpath = "//input[@name=\"addQuoteLine\"]")
+	@PageWait.Field(timeoutSeconds = 10)
 	@ButtonType()
-	@FindByLabel(label = "Add Line Item")
 	public WebElement addLineItem;
 	@BooleanType()
 	@FindBy(xpath = "//*[@id=\"01uE0000000yILK\"]")
@@ -42,5 +43,15 @@ public class MyPageObject {
 	@ButtonType()
 	@FindByLabel(label = " Save ")
 	public WebElement save;
+	@FindBy(xpath = "//input[@name=\"addQuoteLine\"]")
+	@PageWait.Field(timeoutSeconds = 10)
+	@ButtonType()
+	public WebElement addLineItem1;
+	@TextType()
+	@FindBy(xpath = "//input[@name=\"Quantity01uE0000000yILK\"]")
+	public WebElement quantity2;
+	@TextType()
+	@FindBy(xpath = "//tr[9]/td[2]")
+	public WebElement salesPrice2;
 			
 }

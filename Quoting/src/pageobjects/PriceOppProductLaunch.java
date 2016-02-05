@@ -35,5 +35,14 @@ public class PriceOppProductLaunch {
 	@ButtonType()
 	@FindByLabel(label = "Save Price")
 	public WebElement savePrice;
+	@ButtonType()
+	@FindBy(xpath = "//div[5]/div[1]/input")
+	public WebElement addAdjust;
+	@TextType()
+	@FindBy(xpath = "//div[5]/div[2]//input")
+	public WebElement discountPercent;
+	@TextType()
+	@FindBy(id = "8:12;a")
+	public WebElement LotSize;
 	
 }
