@@ -44,5 +44,8 @@ public class PriceOppProductLaunch {
 	@TextType()
 	@FindBy(id = "8:12;a")
 	public WebElement LotSize;
+	@TextType()
+	@FindBy(xpath = "//div[1]/div[2]//div/input")
+	public WebElement firstLotsize;
 	
 }

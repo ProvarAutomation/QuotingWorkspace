@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testCase id="7">
+<testCase id="2">
   <summary/>
   <steps>
     <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" name="ApexConnect" testItemId="1" title="Salesforce Connect: Admin (Test)">
@@ -238,16 +238,16 @@
                 </apiParam>
               </generatedParameters>
             </apiCall>
-            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="77" title="On SF Quote new screen">
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="226" title="On SF Quote new (Quote Not Synced) screen">
               <arguments>
                 <argument id="uiConnectionName">
                   <value class="value" valueClass="string">Admin</value>
                 </argument>
                 <argument id="target">
-                  <value class="uiTarget" uri="sf:ui:target?object=Quote&amp;action=New"/>
+                  <value class="uiTarget" uri="sf:ui:target?object=Quote&amp;action=New&amp;recordType=Quote+Not+Synced"/>
                 </argument>
                 <argument id="navigate">
-                  <value class="value" valueClass="string">Always</value>
+                  <value class="value" valueClass="string">Dont</value>
                 </argument>
                 <argument id="sfUiTargetResultName">
                   <value class="value" valueClass="string">quoteId</value>
@@ -256,7 +256,7 @@
                   <value class="value" valueClass="string">Test</value>
                 </argument>
                 <argument id="targetDescription">
-                  <value class="value" valueClass="string">On SF Quote new screen</value>
+                  <value class="value" valueClass="string">On SF Quote new (Quote Not Synced) screen</value>
                 </argument>
                 <argument id="windowSelection">
                   <value class="value" valueClass="string">Default</value>
@@ -264,16 +264,14 @@
                 <argument id="windowSize">
                   <value class="value" valueClass="string">Default</value>
                 </argument>
-                <argument id="closeWindow">
-                  <value class="value" valueClass="boolean">true</value>
-                </argument>
+                <argument id="closeWindow"/>
                 <argument id="captureBefore"/>
                 <argument id="captureAfter"/>
               </arguments>
               <clauses>
-                <clause name="substeps" testItemId="78">
+                <clause name="substeps" testItemId="227">
                   <steps>
-                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="79" title="Set the Quote Name field to Weber 1">
+                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="228" title="Set the Quote Name field to Weber Quote 1">
                       <arguments>
                         <argument id="locator">
                           <value class="uiLocator" uri="ui:locator?name=Name&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DQuote%26field%3DName"/>
@@ -282,10 +280,10 @@
                           <value class="uiInteraction" uri="ui:interaction?name=set"/>
                         </argument>
                         <argument id="value">
-                          <value class="value" valueClass="string">Weber 1</value>
+                          <value class="value" valueClass="string">Weber Quote 1</value>
                         </argument>
                         <argument id="blur">
-                          <value class="value" valueClass="boolean">false</value>
+                          <value class="value" valueClass="boolean">true</value>
                         </argument>
                         <argument id="pressEnter">
                           <value class="value" valueClass="boolean">false</value>
@@ -297,66 +295,14 @@
                           <value class="value" valueClass="boolean">false</value>
                         </argument>
                         <argument id="interactionDescription">
-                          <value class="value" valueClass="string">Set the Quote Name field to Weber 1</value>
+                          <value class="value" valueClass="string">Set the Quote Name field to Weber Quote 1</value>
                         </argument>
-                        <argument id="wait"/>
                       </arguments>
                       <generatedParameters>
-                        <apiParam group="value" modelBinding="sf:ui:binding:object?object=Quote&amp;field=Name" name="value" seq="10000" title="Value">
+                        <apiParam group="value" name="value" title="Value">
                           <summary>The value to be populated.</summary>
                           <type>
-                            <textType>
-                              <constraints>
-                                <valueConstraint name="maxLength">255</valueConstraint>
-                                <valueConstraint name="maxLines">1</valueConstraint>
-                              </constraints>
-                            </textType>
-                          </type>
-                        </apiParam>
-                        <apiParam group="value" name="blur" seq="10001" title="Tab off field">
-                          <summary>Whether the tab key should be pressed after the value is populated.</summary>
-                          <type>
-                            <booleanType/>
-                          </type>
-                        </apiParam>
-                        <apiParam group="value" name="pressEnter" seq="10002" title="Press Enter">
-                          <summary>Whether the Enter key should be pressed after the value is populated.</summary>
-                          <type>
-                            <booleanType/>
-                          </type>
-                        </apiParam>
-                      </generatedParameters>
-                    </apiCall>
-                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="80" title="Today link the Expiration Date field">
-                      <arguments>
-                        <argument id="locator">
-                          <value class="uiLocator" uri="ui:locator?name=ExpirationDate&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DQuote%26field%3DExpirationDate"/>
-                        </argument>
-                        <argument id="interaction">
-                          <value class="uiInteraction" uri="ui:interaction?name=sfToday"/>
-                        </argument>
-                        <argument id="hover">
-                          <value class="value" valueClass="boolean">false</value>
-                        </argument>
-                        <argument id="captureBefore">
-                          <value class="value" valueClass="boolean">false</value>
-                        </argument>
-                        <argument id="captureAfter">
-                          <value class="value" valueClass="boolean">false</value>
-                        </argument>
-                        <argument id="interactionDescription">
-                          <value class="value" valueClass="string">Today link the Expiration Date field</value>
-                        </argument>
-                        <argument id="pressEnter">
-                          <value class="value" valueClass="boolean">false</value>
-                        </argument>
-                        <argument id="wait"/>
-                      </arguments>
-                      <generatedParameters>
-                        <apiParam group="value" name="hover" title="Hover before Clicking">
-                          <summary>Whether the mouse should hover over the field before it is clicked.</summary>
-                          <type>
-                            <booleanType/>
+                            <textType/>
                           </type>
                         </apiParam>
                         <apiParam group="value" name="blur" title="Tab off field">
@@ -373,7 +319,26 @@
                         </apiParam>
                       </generatedParameters>
                     </apiCall>
-                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="81" title="Click the Save button">
+                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="229" title="Today link the Expiration Date field">
+                      <arguments>
+                        <argument id="locator">
+                          <value class="uiLocator" uri="ui:locator?name=ExpirationDate&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DQuote%26field%3DExpirationDate"/>
+                        </argument>
+                        <argument id="interaction">
+                          <value class="uiInteraction" uri="ui:interaction?name=sfToday"/>
+                        </argument>
+                        <argument id="captureBefore">
+                          <value class="value" valueClass="boolean">false</value>
+                        </argument>
+                        <argument id="captureAfter">
+                          <value class="value" valueClass="boolean">false</value>
+                        </argument>
+                        <argument id="interactionDescription">
+                          <value class="value" valueClass="string">Today link the Expiration Date field</value>
+                        </argument>
+                      </arguments>
+                    </apiCall>
+                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="230" title="Click the Save button">
                       <arguments>
                         <argument id="locator">
                           <value class="uiLocator" uri="ui:locator?name=save&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DQuote%26action%3Dsave"/>
@@ -393,10 +358,9 @@
                         <argument id="interactionDescription">
                           <value class="value" valueClass="string">Click the Save button</value>
                         </argument>
-                        <argument id="wait"/>
                       </arguments>
                       <generatedParameters>
-                        <apiParam group="value" name="hover" seq="10000" title="Hover before Clicking">
+                        <apiParam group="value" name="hover" title="Hover before Clicking">
                           <summary>Whether the mouse should hover over the field before it is clicked.</summary>
                           <type>
                             <booleanType/>
@@ -697,39 +661,28 @@
                 </apiParam>
               </generatedParameters>
             </apiCall>
-            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="90" title="On SF Quote detail screen">
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="231" title="On SF Quote detail (Quote Not Priced) screen">
               <arguments>
                 <argument id="uiConnectionName">
                   <value class="value" valueClass="string">Admin</value>
                 </argument>
                 <argument id="target">
-                  <value class="uiTarget" uri="sf:ui:target?object=Quote&amp;action=View"/>
+                  <value class="uiTarget" uri="sf:ui:target?object=Quote&amp;action=View&amp;recordType=Quote+Not+Priced"/>
                 </argument>
                 <argument id="navigate">
-                  <value class="value" valueClass="string">Always</value>
+                  <value class="value" valueClass="string">Dont</value>
                 </argument>
                 <argument id="sfUiTargetObjectId">
-                  <value class="variable">
-                    <path element="quoteId"/>
-                  </value>
+                  <value class="value" valueClass="string">0Q019000000A1hj</value>
                 </argument>
                 <argument id="targetDescription">
-                  <value class="value" valueClass="string">On SF Quote detail screen</value>
+                  <value class="value" valueClass="string">On SF Quote detail (Quote Not Priced) screen</value>
                 </argument>
-                <argument id="windowSelection">
-                  <value class="value" valueClass="string">Default</value>
-                </argument>
-                <argument id="windowSize">
-                  <value class="value" valueClass="string">Default</value>
-                </argument>
-                <argument id="closeWindow"/>
-                <argument id="captureBefore"/>
-                <argument id="captureAfter"/>
               </arguments>
               <clauses>
-                <clause name="substeps" testItemId="91">
+                <clause name="substeps" testItemId="232">
                   <steps>
-                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithRow" name="UiWithRow" testItemId="108" title="With View/QuoteLineItems/QuoteLineItemsTable {PricebookEntry_Product2_Name = &quot;Featured 2012&quot;}">
+                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithRow" name="UiWithRow" testItemId="233" title="With QuoteLineItems rows {QUOTE_LI_PRODUCT2 = &quot;Featured 2012&quot;}">
                       <arguments>
                         <argument id="uiConnectionName">
                           <value class="value" valueClass="string">Admin</value>
@@ -740,22 +693,33 @@
                         <argument id="uiRowLocator">
                           <value class="eq">
                             <lhs class="variable">
-                              <path element="PricebookEntry_Product2_Name"/>
+                              <path element="QUOTE_LI_PRODUCT2"/>
                             </lhs>
                             <rhs class="value" valueClass="string">Featured 2012</rhs>
                           </value>
                         </argument>
                         <argument id="locatorDescription">
-                          <value class="value" valueClass="string">With View/QuoteLineItems/QuoteLineItemsTable {PricebookEntry_Product2_Name = "Featured 2012"}</value>
+                          <value class="value" valueClass="string">With QuoteLineItems rows {QUOTE_LI_PRODUCT2 = "Featured 2012"}</value>
                         </argument>
+                        <argument id="failIfNotFound">
+                          <value class="value" valueClass="boolean">true</value>
+                        </argument>
+                        <argument id="debugRowLocator"/>
+                        <argument id="resultName">
+                          <value class="value" valueClass="string">Row</value>
+                        </argument>
+                        <argument id="resultScope">
+                          <value class="value" valueClass="string">Local</value>
+                        </argument>
+                        <argument id="autoPaginate"/>
                       </arguments>
                       <clauses>
-                        <clause name="substeps" testItemId="109">
+                        <clause name="substeps" testItemId="234">
                           <steps>
-                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="110" title="Click the Calculate Price field">
+                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="235" title="Click the Calculate Price field">
                               <arguments>
                                 <argument id="locator">
-                                  <value class="uiLocator" uri="ui:locator?name=Calculate_Price__c&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DQuote%26field%3DCalculate_Price__c%26relationship%3DQuoteLineItems&amp;rowLocator=PricebookEntry_Product2_Name+%3D+%27Featured+2012%27"/>
+                                  <value class="uiLocator" uri="ui:locator?name=Calculate_Price__c&amp;rowLocator=QUOTE_LI_PRODUCT2+%3D+%27Featured+2012%27&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DQuote%26field%3DCalculate_Price__c%26relationship%3DQuoteLineItems"/>
                                 </argument>
                                 <argument id="interaction">
                                   <value class="uiInteraction" uri="ui:interaction?name=action"/>
@@ -772,9 +736,10 @@
                                 <argument id="interactionDescription">
                                   <value class="value" valueClass="string">Click the Calculate Price field</value>
                                 </argument>
+                                <argument id="wait"/>
                               </arguments>
                               <generatedParameters>
-                                <apiParam group="value" name="hover" title="Hover before Clicking">
+                                <apiParam group="value" name="hover" seq="10000" title="Hover before Clicking">
                                   <summary>Whether the mouse should hover over the field before it is clicked.</summary>
                                   <type>
                                     <booleanType/>
@@ -785,6 +750,14 @@
                           </steps>
                         </clause>
                       </clauses>
+                      <generatedParameters>
+                        <apiParam group="options" name="autoPaginate" title="Auto Paginate">
+                          <summary>Whether Show More/Next is clicked till the match condition succeeds.</summary>
+                          <type>
+                            <booleanType/>
+                          </type>
+                        </apiParam>
+                      </generatedParameters>
                     </apiCall>
                   </steps>
                 </clause>
@@ -825,10 +798,10 @@
               <clauses>
                 <clause name="substeps" testItemId="112">
                   <steps>
-                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="224" title="Set the Lot Size control to 25">
+                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="236" title="Set the First Lotsize control to 25">
                       <arguments>
                         <argument id="locator">
-                          <value class="uiLocator" uri="ui:locator?name=LotSize"/>
+                          <value class="uiLocator" uri="ui:locator?name=firstLotsize"/>
                         </argument>
                         <argument id="interaction">
                           <value class="uiInteraction" uri="ui:interaction?name=set"/>
@@ -849,11 +822,9 @@
                           <value class="value" valueClass="boolean">false</value>
                         </argument>
                         <argument id="interactionDescription">
-                          <value class="value" valueClass="string">Set the Lot Size control to 25</value>
+                          <value class="value" valueClass="string">Set the First Lotsize control to 25</value>
                         </argument>
-                        <argument id="wait">
-                          <value class="uiWait" uri="ui:wait:timed?seconds=5"/>
-                        </argument>
+                        <argument id="wait"/>
                       </arguments>
                       <generatedParameters>
                         <apiParam group="value" name="value" seq="10000" title="Value">
@@ -1191,13 +1162,13 @@
                 </apiParam>
               </generatedParameters>
             </apiCall>
-            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="124" title="On SF Quote new screen">
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="124" title="On SF Quote new (Quote Not Synced) screen">
               <arguments>
                 <argument id="uiConnectionName">
                   <value class="value" valueClass="string">Admin</value>
                 </argument>
                 <argument id="target">
-                  <value class="uiTarget" uri="sf:ui:target?object=Quote&amp;action=New"/>
+                  <value class="uiTarget" uri="sf:ui:target?object=Quote&amp;action=New&amp;recordType=Quote+Not+Synced"/>
                 </argument>
                 <argument id="navigate">
                   <value class="value" valueClass="string">Dont</value>
@@ -1209,7 +1180,7 @@
                   <value class="value" valueClass="string">Test</value>
                 </argument>
                 <argument id="targetDescription">
-                  <value class="value" valueClass="string">On SF Quote new screen</value>
+                  <value class="value" valueClass="string">On SF Quote new (Quote Not Synced) screen</value>
                 </argument>
                 <argument id="windowSelection">
                   <value class="value" valueClass="string">Default</value>
@@ -1651,7 +1622,7 @@
               <clauses>
                 <clause name="substeps" testItemId="212">
                   <steps>
-                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithRow" name="UiWithRow" testItemId="213" title="With View/QuoteLineItems/QuoteLineItemsTable {PricebookEntry_Product2_Name = &quot;Featured 2012&quot;}">
+                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithRow" name="UiWithRow" testItemId="213" title="With QuoteLineItems rows {QUOTE_LI_PRODUCT2 = &quot;Featured 2012&quot;}">
                       <arguments>
                         <argument id="uiConnectionName">
                           <value class="value" valueClass="string">Admin</value>
@@ -1662,14 +1633,25 @@
                         <argument id="uiRowLocator">
                           <value class="eq">
                             <lhs class="variable">
-                              <path element="PricebookEntry_Product2_Name"/>
+                              <path element="QUOTE_LI_PRODUCT2"/>
                             </lhs>
                             <rhs class="value" valueClass="string">Featured 2012</rhs>
                           </value>
                         </argument>
                         <argument id="locatorDescription">
-                          <value class="value" valueClass="string">With View/QuoteLineItems/QuoteLineItemsTable {PricebookEntry_Product2_Name = "Featured 2012"}</value>
+                          <value class="value" valueClass="string">With QuoteLineItems rows {QUOTE_LI_PRODUCT2 = "Featured 2012"}</value>
                         </argument>
+                        <argument id="failIfNotFound">
+                          <value class="value" valueClass="boolean">true</value>
+                        </argument>
+                        <argument id="debugRowLocator"/>
+                        <argument id="resultName">
+                          <value class="value" valueClass="string">Row</value>
+                        </argument>
+                        <argument id="resultScope">
+                          <value class="value" valueClass="string">Local</value>
+                        </argument>
+                        <argument id="autoPaginate"/>
                       </arguments>
                       <clauses>
                         <clause name="substeps" testItemId="214">
@@ -1694,9 +1676,10 @@
                                 <argument id="interactionDescription">
                                   <value class="value" valueClass="string">Click the Calculate Price field</value>
                                 </argument>
+                                <argument id="wait"/>
                               </arguments>
                               <generatedParameters>
-                                <apiParam group="value" name="hover" title="Hover before Clicking">
+                                <apiParam group="value" name="hover" seq="10000" title="Hover before Clicking">
                                   <summary>Whether the mouse should hover over the field before it is clicked.</summary>
                                   <type>
                                     <booleanType/>
@@ -1707,6 +1690,14 @@
                           </steps>
                         </clause>
                       </clauses>
+                      <generatedParameters>
+                        <apiParam group="options" name="autoPaginate" title="Auto Paginate">
+                          <summary>Whether Show More/Next is clicked till the match condition succeeds.</summary>
+                          <type>
+                            <booleanType/>
+                          </type>
+                        </apiParam>
+                      </generatedParameters>
                     </apiCall>
                   </steps>
                 </clause>
@@ -1747,10 +1738,10 @@
               <clauses>
                 <clause name="substeps" testItemId="217">
                   <steps>
-                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="218" title="Set the Lot Size control to 20">
+                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="218" title="Set the First Lotsize control to 20">
                       <arguments>
                         <argument id="locator">
-                          <value class="uiLocator" uri="ui:locator?name=LotSize"/>
+                          <value class="uiLocator" uri="ui:locator?name=firstLotsize"/>
                         </argument>
                         <argument id="interaction">
                           <value class="uiInteraction" uri="ui:interaction?name=set"/>
@@ -1771,7 +1762,7 @@
                           <value class="value" valueClass="boolean">false</value>
                         </argument>
                         <argument id="interactionDescription">
-                          <value class="value" valueClass="string">Set the Lot Size control to 20</value>
+                          <value class="value" valueClass="string">Set the First Lotsize control to 20</value>
                         </argument>
                         <argument id="wait">
                           <value class="uiWait" uri="ui:wait:timed?seconds=5"/>
@@ -1946,4 +1937,5 @@
       </clauses>
     </apiCall>
   </steps>
+  <tags/>
 </testCase>
