@@ -72,22 +72,23 @@
       </arguments>
       <clauses>
         <clause name="substeps" testItemId="6">
-          <steps/>
+          <steps>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexDeleteObject" name="ApexDeleteObject" testItemId="9" title="Delete Object: {Row.Id}">
+              <arguments>
+                <argument id="apexConnectionName">
+                  <value class="value" valueClass="string">Admin</value>
+                </argument>
+                <argument id="objectId">
+                  <value class="variable">
+                    <path element="Row"/>
+                    <path element="Id"/>
+                  </value>
+                </argument>
+              </arguments>
+            </apiCall>
+          </steps>
         </clause>
       </clauses>
-    </apiCall>
-    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexDeleteObject" name="ApexDeleteObject" testItemId="9" title="Delete Object: {Row.Id}">
-      <arguments>
-        <argument id="apexConnectionName">
-          <value class="value" valueClass="string">Admin</value>
-        </argument>
-        <argument id="objectId">
-          <value class="variable">
-            <path element="Row"/>
-            <path element="Id"/>
-          </value>
-        </argument>
-      </arguments>
     </apiCall>
   </steps>
 </testCase>
