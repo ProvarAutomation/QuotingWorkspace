@@ -26,9 +26,35 @@
             <connectionUrl envName="Pricing" secureStorageNodeId="bb430fa7-fde3-426a-b36f-4f67e6c691f7" url="sf:user=provar.tester@coxauto.com.pricing;password={password};environment=SANDBOX"/>
           </connectionUrls>
         </connection>
+        <connection name="JasonJohn">
+          <summary>Jason John's COE System Admin Account</summary>
+          <connectionUrls>
+            <connectionUrl url="sf:user=jason.john@autotradergroup.com.quoting;environment=PROD_DEV;logonAsConnection=Admin"/>
+          </connectionUrls>
+        </connection>
+      </connections>
+    </connectionClass>
+    <connectionClass name="google">
+      <connections>
+        <connection name="Email">
+          <summary>AutoTrader test user email</summary>
+          <connectionUrls>
+            <connectionUrl secureStorageNodeId="c4fe27d7-070f-470a-9099-fcf238af23b1" url="google:user=autotradertestuser@gmail.com;accessToken={accessToken};refreshToken={refreshToken};expiry=1457619786000;proxyHost=;proxyUser="/>
+          </connectionUrls>
+        </connection>
       </connections>
     </connectionClass>
   </connectionClasses>
+  <tagTypes>
+    <tagType name="maintainer" tagClass="maintainer" title="Test Case Maintainer">
+      <summary>The person or team responsible for maintaining a Test Case</summary>
+      <tags>
+        <tag name="Jason John">
+          <summary>#1 Provar Guy</summary>
+        </tag>
+      </tags>
+    </tagType>
+  </tagTypes>
   <browserConfigurations>
     <browserConfiguration adjustBrowserWidthForChromeIde="true" browserHeight="0" browserWidth="0" name="Full Screen">
       <summary>Full screen with Test Builder adjustment</summary>

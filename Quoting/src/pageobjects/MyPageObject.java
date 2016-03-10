@@ -21,6 +21,7 @@ public class MyPageObject {
 	@ButtonType()
 	@FindByLabel(label = " Sync ")
 	public WebElement sync;
+	@PageWait.Field(timeoutSeconds = 30)
 	@ButtonType()
 	@FindByLabel(label = " Done ")
 	public WebElement done;
@@ -53,5 +54,7 @@ public class MyPageObject {
 	@TextType()
 	@FindBy(xpath = "//tr[9]/td[2]")
 	public WebElement salesPrice2;
-			
+	@TextType()
+	@FindBy(id = "9:13;a")
+	public WebElement _3_a;
 }
