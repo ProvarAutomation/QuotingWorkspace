@@ -20,8 +20,8 @@ public class PriceOppProductLaunch {
 	@ChoiceListType()
 	@FindBy(xpath = "//*[@id=\"21:12;a\"]")
 	public WebElement type;
+	@FindBy(id = "31:12;a")
 	@TextType()
-	@FindBy(xpath = "//*[@id=\"31:12;a\"]")
 	public WebElement Quantity;
 	@ButtonType()
 	@FindByLabel(label = "Add")
@@ -44,8 +44,20 @@ public class PriceOppProductLaunch {
 	@TextType()
 	@FindBy(id = "8:12;a")
 	public WebElement LotSize;
-	@TextType()
-	@FindBy(xpath = "//div[1]/div[2]//div/input")
-	public WebElement firstLotsize;
+	@FindBy(id = "9:13;a")
+	@ChoiceListType()
+	public WebElement Dma;
+	@FindBy(id = "25:13;a")
+	@ChoiceListType()
+	public WebElement AlphaZone;
+	@FindBy(id = "44:13;a")
+	@ChoiceListType()
+	public WebElement Make;
+	@ButtonType()
+	@FindByLabel(label = "Cancel")
+	public WebElement cancel;
+	@ChoiceListType()
+	@FindBy(id = "8:13;a")
+	public WebElement Duration;
 	
 }
