@@ -59,5 +59,8 @@ public class PriceOppProductLaunch {
 	@ChoiceListType()
 	@FindBy(id = "8:13;a")
 	public WebElement Duration;
+	@TextType()
+	@FindBy(id = "37:13;a")
+	public WebElement DMAList;
 	
 }
