@@ -73,5 +73,9 @@ public class ProductSelection {
 	@ButtonType()
 	@FindBy(xpath = "//*[@id=\"save_filter_PricebookEntry\"]")
 	public WebElement search;
+
+	@LinkType()
+	@FindBy(xpath = "//tr[2]/td[2]/a")
+	public WebElement price;
 			
 }
