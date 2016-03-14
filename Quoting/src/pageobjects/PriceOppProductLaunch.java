@@ -15,10 +15,6 @@ import com.provar.core.testapi.annotations.*;
 public class PriceOppProductLaunch {
 
 	
-	@TextType()
-	@FindBy(xpath = "//label/span[text()='Lot Size']/../../input")
-	public WebElement lotSize;
-	
 	@ChoiceListType()
 	@FindBy(xpath = "//label/span[text()='Type:']/../../select")
 	public WebElement type;
@@ -33,6 +29,7 @@ public class PriceOppProductLaunch {
 	@FindByLabel(label = "Remove")
 	public WebElement remove;
 	
+	@PageWait.Timed(durationSeconds = 5)
 	@ButtonType()
 	@FindByLabel(label = "Calculate")
 	public WebElement calculate;
