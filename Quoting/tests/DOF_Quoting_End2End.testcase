@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testCase id="0">
+<testCase id="4">
   <summary/>
   <steps>
     <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="764" title="Create Opp with Admin">
@@ -181,10 +181,10 @@
         <argument id="environment"/>
       </arguments>
     </apiCall>
-    <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="11" title="Read Product Order">
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="11" title="Read Order Product List">
       <arguments>
         <argument id="description">
-          <value class="value" valueClass="string">Read Product Order</value>
+          <value class="value" valueClass="string">Read Order Product List</value>
         </argument>
       </arguments>
       <parameterValueSources>
@@ -528,6 +528,7 @@
                 <argument id="interactionDescription">
                   <value class="value" valueClass="string">Today link the Expiration Date field</value>
                 </argument>
+                <argument id="wait"/>
               </arguments>
             </apiCall>
             <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="66" title="Click the Save button">
@@ -728,24 +729,6 @@
                               <clauses>
                                 <clause name="substeps" testItemId="818">
                                   <steps>
-                                    <apiCall apiId="com.provar.plugins.bundled.apis.If" name="If" testItemId="836" title="If: {ProductIteration.Product} = &quot;.*KBB.*&quot;">
-                                      <arguments>
-                                        <argument id="condition">
-                                          <value class="compound">
-                                            <parts>
-                                              <variable>
-                                                <path element="ProductIteration"/>
-                                                <path element="Product"/>
-                                              </variable>
-                                              <value valueClass="string"> = ".*KBB.*"</value>
-                                            </parts>
-                                          </value>
-                                        </argument>
-                                      </arguments>
-                                      <clauses>
-                                        <clause name="then" testItemId="837"/>
-                                      </clauses>
-                                    </apiCall>
                                     <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="819" title="Set the Make select to Honda">
                                       <arguments>
                                         <argument id="locator">
@@ -758,7 +741,7 @@
                                           <value class="value" valueClass="string">Honda</value>
                                         </argument>
                                         <argument id="blur">
-                                          <value class="value" valueClass="boolean">false</value>
+                                          <value class="value" valueClass="boolean">true</value>
                                         </argument>
                                         <argument id="pressEnter">
                                           <value class="value" valueClass="boolean">false</value>
@@ -773,9 +756,14 @@
                                           <value class="value" valueClass="string">Set the Make select to Honda</value>
                                         </argument>
                                         <argument id="wait">
-                                          <value class="uiWait" uri="ui:wait:pageload?timeout=60"/>
+                                          <value class="uiWait" uri="ui:wait:timed?seconds=10"/>
                                         </argument>
                                       </arguments>
+                                      <expectedExceptions>
+                                        <expectedException comparisonType="Contains">
+                                          <assertionValue class="value" valueClass="string">Field not found</assertionValue>
+                                        </expectedException>
+                                      </expectedExceptions>
                                       <generatedParameters>
                                         <apiParam group="value" name="value" seq="10000" title="Value">
                                           <summary>The value to be populated.</summary>
@@ -797,6 +785,66 @@
                                         </apiParam>
                                       </generatedParameters>
                                     </apiCall>
+                                    <apiCall apiId="com.provar.plugins.bundled.apis.If" name="If" testItemId="846" title="If: {ProductIteration.Product ~ &quot;.*Showcase.*&quot;}">
+                                      <arguments>
+                                        <argument id="condition">
+                                          <value class="match">
+                                            <lhs class="variable">
+                                              <path element="ProductIteration"/>
+                                              <path element="Product"/>
+                                            </lhs>
+                                            <rhs class="value" valueClass="string">.*Showcase.*</rhs>
+                                          </value>
+                                        </argument>
+                                      </arguments>
+                                      <clauses>
+                                        <clause name="then" testItemId="847">
+                                          <steps>
+                                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="848" title="Set the Dma select to GA">
+                                              <arguments>
+                                                <argument id="locator">
+                                                  <value class="uiLocator" uri="ui:locator?name=Dma"/>
+                                                </argument>
+                                                <argument id="interaction">
+                                                  <value class="uiInteraction" uri="ui:interaction?name=set"/>
+                                                </argument>
+                                                <argument id="interactionDescription">
+                                                  <value class="value" valueClass="string">Set the Dma select to GA</value>
+                                                </argument>
+                                                <argument id="wait"/>
+                                                <argument id="captureBefore"/>
+                                                <argument id="captureAfter"/>
+                                                <argument id="value">
+                                                  <value class="value" valueClass="string">GA</value>
+                                                </argument>
+                                                <argument id="blur"/>
+                                                <argument id="pressEnter"/>
+                                              </arguments>
+                                              <generatedParameters>
+                                                <apiParam group="value" name="value" seq="10000" title="Value">
+                                                  <summary>The value to be populated.</summary>
+                                                  <type>
+                                                    <choiceType/>
+                                                  </type>
+                                                </apiParam>
+                                                <apiParam group="value" name="blur" seq="10001" title="Tab off field">
+                                                  <summary>Whether the tab key should be pressed after the value is populated.</summary>
+                                                  <type>
+                                                    <booleanType/>
+                                                  </type>
+                                                </apiParam>
+                                                <apiParam group="value" name="pressEnter" seq="10002" title="Press Enter">
+                                                  <summary>Whether the Enter key should be pressed after the value is populated.</summary>
+                                                  <type>
+                                                    <booleanType/>
+                                                  </type>
+                                                </apiParam>
+                                              </generatedParameters>
+                                            </apiCall>
+                                          </steps>
+                                        </clause>
+                                      </clauses>
+                                    </apiCall>
                                     <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="823" title="Set the Dma select to ATLANTA">
                                       <arguments>
                                         <argument id="locator">
@@ -814,12 +862,69 @@
                                         <argument id="value">
                                           <value class="value" valueClass="string">ATLANTA</value>
                                         </argument>
-                                        <argument id="blur"/>
+                                        <argument id="blur">
+                                          <value class="value" valueClass="boolean">true</value>
+                                        </argument>
                                         <argument id="pressEnter"/>
                                       </arguments>
                                       <expectedExceptions>
                                         <expectedException comparisonType="Contains" title="test">
-                                          <assertionValue class="value" valueClass="string">.*</assertionValue>
+                                          <assertionValue class="value" valueClass="string">Field not found</assertionValue>
+                                        </expectedException>
+                                        <expectedException comparisonType="Contains"/>
+                                      </expectedExceptions>
+                                      <generatedParameters>
+                                        <apiParam group="value" name="value" seq="10000" title="Value">
+                                          <summary>The value to be populated.</summary>
+                                          <type>
+                                            <choiceType/>
+                                          </type>
+                                        </apiParam>
+                                        <apiParam group="value" name="blur" seq="10001" title="Tab off field">
+                                          <summary>Whether the tab key should be pressed after the value is populated.</summary>
+                                          <type>
+                                            <booleanType/>
+                                          </type>
+                                        </apiParam>
+                                        <apiParam group="value" name="pressEnter" seq="10002" title="Press Enter">
+                                          <summary>Whether the Enter key should be pressed after the value is populated.</summary>
+                                          <type>
+                                            <booleanType/>
+                                          </type>
+                                        </apiParam>
+                                      </generatedParameters>
+                                    </apiCall>
+                                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="843" title="Set the Type select to Honda">
+                                      <arguments>
+                                        <argument id="locator">
+                                          <value class="uiLocator" uri="ui:locator?name=Type"/>
+                                        </argument>
+                                        <argument id="interaction">
+                                          <value class="uiInteraction" uri="ui:interaction?name=set"/>
+                                        </argument>
+                                        <argument id="value">
+                                          <value class="value" valueClass="string">Honda</value>
+                                        </argument>
+                                        <argument id="blur">
+                                          <value class="value" valueClass="boolean">true</value>
+                                        </argument>
+                                        <argument id="pressEnter">
+                                          <value class="value" valueClass="boolean">false</value>
+                                        </argument>
+                                        <argument id="captureBefore">
+                                          <value class="value" valueClass="boolean">false</value>
+                                        </argument>
+                                        <argument id="captureAfter">
+                                          <value class="value" valueClass="boolean">false</value>
+                                        </argument>
+                                        <argument id="interactionDescription">
+                                          <value class="value" valueClass="string">Set the Type select to Honda</value>
+                                        </argument>
+                                        <argument id="wait"/>
+                                      </arguments>
+                                      <expectedExceptions>
+                                        <expectedException comparisonType="Contains">
+                                          <assertionValue class="value" valueClass="string">Field not found</assertionValue>
                                         </expectedException>
                                       </expectedExceptions>
                                       <generatedParameters>
@@ -860,12 +965,14 @@
                                         <argument id="value">
                                           <value class="value" valueClass="string">ATLANTA_NE1</value>
                                         </argument>
-                                        <argument id="blur"/>
+                                        <argument id="blur">
+                                          <value class="value" valueClass="boolean">true</value>
+                                        </argument>
                                         <argument id="pressEnter"/>
                                       </arguments>
                                       <expectedExceptions>
-                                        <expectedException assertionTarget="ExceptionClass" title="">
-                                          <assertionValue class="value" valueClass="string">.*</assertionValue>
+                                        <expectedException comparisonType="Contains" title="">
+                                          <assertionValue class="value" valueClass="string">Field not found</assertionValue>
                                         </expectedException>
                                       </expectedExceptions>
                                       <generatedParameters>
@@ -906,12 +1013,14 @@
                                         <argument id="value">
                                           <value class="value" valueClass="string">1</value>
                                         </argument>
-                                        <argument id="blur"/>
+                                        <argument id="blur">
+                                          <value class="value" valueClass="boolean">true</value>
+                                        </argument>
                                         <argument id="pressEnter"/>
                                       </arguments>
                                       <expectedExceptions>
-                                        <expectedException assertionTarget="ExceptionClass" comparisonType="EqualTo" title="Field not found">
-                                          <assertionValue class="value" valueClass="string">.*</assertionValue>
+                                        <expectedException comparisonType="Contains" title="Field not found">
+                                          <assertionValue class="value" valueClass="string">Field not found</assertionValue>
                                         </expectedException>
                                       </expectedExceptions>
                                       <generatedParameters>
@@ -956,12 +1065,14 @@
                                         <argument id="value">
                                           <value class="value" valueClass="string">1</value>
                                         </argument>
-                                        <argument id="blur"/>
+                                        <argument id="blur">
+                                          <value class="value" valueClass="boolean">true</value>
+                                        </argument>
                                         <argument id="pressEnter"/>
                                       </arguments>
                                       <expectedExceptions>
-                                        <expectedException assertionTarget="ExceptionClass" comparisonType="EqualTo" title="test">
-                                          <assertionValue class="value" valueClass="string">.*</assertionValue>
+                                        <expectedException comparisonType="Contains" title="test">
+                                          <assertionValue class="value" valueClass="string">Field not found</assertionValue>
                                         </expectedException>
                                       </expectedExceptions>
                                       <generatedParameters>
@@ -1006,12 +1117,14 @@
                                         <argument id="value">
                                           <value class="value" valueClass="string">1</value>
                                         </argument>
-                                        <argument id="blur"/>
+                                        <argument id="blur">
+                                          <value class="value" valueClass="boolean">true</value>
+                                        </argument>
                                         <argument id="pressEnter"/>
                                       </arguments>
                                       <expectedExceptions>
-                                        <expectedException title="Expected exception">
-                                          <assertionValue class="value" valueClass="string">.*</assertionValue>
+                                        <expectedException comparisonType="Contains" title="Expected exception">
+                                          <assertionValue class="value" valueClass="string">Field not found</assertionValue>
                                         </expectedException>
                                       </expectedExceptions>
                                       <generatedParameters>
@@ -1095,16 +1208,6 @@
                                 </clause>
                               </clauses>
                             </apiCall>
-                            <caseCall testCaseId="d56fded0-dc97-4adc-b39f-ffe59b7ea46f" testItemId="794">
-                              <tags>
-                                <string>disabled</string>
-                              </tags>
-                              <arguments>
-                                <argument id="reuseConnectionName">
-                                  <value class="value" valueClass="string">SalesforceConnection</value>
-                                </argument>
-                              </arguments>
-                            </caseCall>
                           </steps>
                         </clause>
                       </clauses>

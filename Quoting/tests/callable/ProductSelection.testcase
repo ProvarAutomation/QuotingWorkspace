@@ -99,7 +99,9 @@
                 <argument id="interactionDescription">
                   <value class="value" valueClass="string">Set the By Keyword control to {ProductName}</value>
                 </argument>
-                <argument id="wait"/>
+                <argument id="wait">
+                  <value class="uiWait" uri="ui:wait:pageload?timeout=60"/>
+                </argument>
               </arguments>
               <generatedParameters>
                 <apiParam group="value" name="value" seq="10000" title="Value">

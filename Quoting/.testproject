@@ -39,7 +39,7 @@
         <connection name="Email">
           <summary>AutoTrader test user email</summary>
           <connectionUrls>
-            <connectionUrl secureStorageNodeId="c4fe27d7-070f-470a-9099-fcf238af23b1" url="google:user=autotradertestuser@gmail.com;accessToken={accessToken};refreshToken={refreshToken};expiry=1457698898626"/>
+            <connectionUrl secureStorageNodeId="c4fe27d7-070f-470a-9099-fcf238af23b1" url="google:user=autotradertestuser@gmail.com;accessToken={accessToken};refreshToken={refreshToken};expiry=1457962006773"/>
           </connectionUrls>
         </connection>
       </connections>
