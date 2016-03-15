@@ -81,4 +81,30 @@ public class PriceOppProductLaunch {
 	@FindBy(xpath = "//label/span[text()='Type:']/../../select")
 	public WebElement Type;
 	
+	
+	@FindBy(className = "stateSelect")
+	@ChoiceListType()
+	public WebElement State;
+	
+	@FindBy(className = "countySelect")
+	@ChoiceListType()
+	public WebElement County;
+	
+	@FindBy(xpath = "//label/span[text()='Slots:']/../../select")
+	@ChoiceListType()
+	public WebElement Slots;
+
+	@FindBy(xpath = "//label/span[text()='Discount Percent:']/../../input")
+	@ChoiceListType()
+	public WebElement DiscountPercent;
+	
+	@FindBy(xpath = "//label/span[text()='Discount Amount:']/../../input")
+	@ChoiceListType()
+	public WebElement DiscountAmount;
+
+	@ButtonType()
+	@FindBy(css = "div.slds-m-top--large input[type='button'][value='+']")
+	public WebElement AddCounty;
+
+
 }

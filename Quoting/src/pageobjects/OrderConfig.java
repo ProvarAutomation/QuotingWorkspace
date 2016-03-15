@@ -17,6 +17,10 @@ import com.provar.core.testapi.annotations.*;
 public class OrderConfig {
 
 	@TextType()
+	@FindByLabel(label = "County", labelType = LabelType.PrecedingCell, qualifierXpath = "input")
+	public WebElement County;
+	
+	@TextType()
 	@FindByLabel(label = "Line Description", labelType = LabelType.PrecedingCell, qualifierXpath = "input")
 	public WebElement LineDescription;
 	@TextType()
