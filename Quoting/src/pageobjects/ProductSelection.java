@@ -77,5 +77,9 @@ public class ProductSelection {
 	@LinkType()
 	@FindBy(xpath = "//tr[2]/td[2]/a")
 	public WebElement price;
+
+	@ChoiceListType(values = { @ChoiceListValue(value = "Display 100 records per page", title = "100") })
+	@FindBy(xpath = "//*[@id=\"lineItemView_paginator_rpp_target\"]/img")
+	public WebElement paginator;
 			
 }
