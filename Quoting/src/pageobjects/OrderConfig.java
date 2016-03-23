@@ -955,6 +955,9 @@ public class OrderConfig {
 	@FindByLabel(label = "Co-op Contact Email 1", labelType = LabelType.PrecedingCell, qualifierXpath = "input")
 	public WebElement CoOpContactEmail1;
 	@TextType()
+	@FindByLabel(label = "Non-reimbursable amount", labelType = LabelType.PrecedingCell, qualifierXpath = "input")
+	public WebElement NonReimbursableAmount;
+	@TextType()
 	@FindByLabel(label = "Co-op Contact Email", labelType = LabelType.PrecedingCell, qualifierXpath = "input")
 	public WebElement CoOpContactEmail;
 	@TextType()
