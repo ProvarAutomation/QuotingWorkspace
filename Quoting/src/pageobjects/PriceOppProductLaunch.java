@@ -93,6 +93,9 @@ public class PriceOppProductLaunch {
 	@FindBy(xpath = "//label/span[text()='Slots:']/../../select")
 	@ChoiceListType()
 	public WebElement Slots;
+	@FindBy(xpath = "//label/span[text()='Buckets:']/../../select")
+	@ChoiceListType()
+	public WebElement Buckets;
 
 	@FindBy(xpath = "//label/span[text()='Discount Percent:']/../../input")
 	@ChoiceListType()
