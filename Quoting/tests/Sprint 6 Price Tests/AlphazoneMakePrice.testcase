@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testCase id="5">
+<testCase id="3">
   <summary/>
   <steps>
     <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="329" title="Create Opp">
@@ -3685,7 +3685,7 @@
                         </argument>
                       </arguments>
                       <parameterValueSources>
-                        <parameterValueSource url="excel:templates/ProductConfigFields.xls?worksheet=ProductConfigs&amp;range=A1%3AFW114&amp;namesLocation=FirstRowOfRange&amp;whereName=ProductTitle&amp;whereComparison=EqualTo&amp;whereValue=%7BProduct1%7D" variableName="ExcelData" variableScope="Test">
+                        <parameterValueSource url="excel:templates/PriceProductGroups.xlsx?worksheet=Alphazone-Make-Counties&amp;range=A1%3ACI7&amp;namesLocation=FirstRowOfRange&amp;whereName=ProductTitle&amp;whereComparison=EqualTo&amp;whereValue=%7BProduct1%7D" variableName="ExcelData" variableScope="Test">
                           <cacheToken>C:/Users/jtjohn/Provar/Workspace/ProvarTesting2/Test/templates/FillData.xlsx;1438091420870</cacheToken>
                           <cachedParameters>
                             <apiParam name="RowNumber"/>
@@ -4057,14 +4057,14 @@
               <clauses>
                 <clause name="substeps" testItemId="758">
                   <steps>
-                    <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="759" title="Read Excel Sheet">
+                    <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="777" title="Read Excel Sheet">
                       <arguments>
                         <argument id="description">
                           <value class="value" valueClass="string">Read Excel Sheet</value>
                         </argument>
                       </arguments>
                       <parameterValueSources>
-                        <parameterValueSource url="excel:templates/ProductConfigFields.xls?worksheet=ProductConfigs&amp;range=A1%3AFW114&amp;namesLocation=FirstRowOfRange&amp;whereName=ProductTitle&amp;whereComparison=EqualTo&amp;whereValue=%7BProduct2%7D" variableName="ExcelData" variableScope="Test">
+                        <parameterValueSource url="excel:templates/PriceProductGroups.xlsx?worksheet=Alphazone-Make-Counties&amp;range=A1%3ACI7&amp;namesLocation=FirstRowOfRange&amp;whereName=ProductTitle&amp;whereComparison=EqualTo&amp;whereValue=%7BProduct2%7D" variableName="ExcelData" variableScope="Test">
                           <cacheToken>C:/Users/jtjohn/Provar/Workspace/ProvarTesting2/Test/templates/FillData.xlsx;1438091420870</cacheToken>
                           <cachedParameters>
                             <apiParam name="RowNumber"/>
@@ -4267,7 +4267,7 @@
                         </parameterValueSource>
                       </parameterValueSources>
                       <clauses>
-                        <clause name="hidden" testItemId="760">
+                        <clause name="hidden" testItemId="778">
                           <steps/>
                         </clause>
                       </clauses>
@@ -4444,7 +4444,7 @@
                         </argument>
                       </arguments>
                       <parameterValueSources>
-                        <parameterValueSource url="excel:templates/ProductConfigFields.xls?worksheet=ProductConfigs&amp;range=A1%3AFW114&amp;namesLocation=FirstRowOfRange&amp;whereName=ProductTitle&amp;whereComparison=EqualTo&amp;whereValue=%7BProduct3%7D" variableName="ExcelData" variableScope="Test">
+                        <parameterValueSource url="excel:templates/PriceProductGroups.xlsx?worksheet=Alphazone-Make-Counties&amp;range=A1%3ACI7&amp;namesLocation=FirstRowOfRange&amp;whereName=ProductTitle&amp;whereComparison=EqualTo&amp;whereValue=%7BProduct3%7D" variableName="ExcelData" variableScope="Test">
                           <cacheToken>C:/Users/jtjohn/Provar/Workspace/ProvarTesting2/Test/templates/FillData.xlsx;1438091420870</cacheToken>
                           <cachedParameters>
                             <apiParam name="RowNumber"/>
@@ -4647,7 +4647,7 @@
                         </parameterValueSource>
                       </parameterValueSources>
                       <clauses>
-                        <clause name="hidden" testItemId="769">
+                        <clause name="hidden" testItemId="776">
                           <steps/>
                         </clause>
                       </clauses>
@@ -4752,6 +4752,27 @@
           </type>
         </apiParam>
       </generatedParameters>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiHandleAlert" name="UiHandleAlert" testItemId="779" title="Handle UI Alerts">
+      <arguments>
+        <argument id="alerts">
+          <value class="valueList" mutable="Mutable">
+            <namedValues mutable="Mutable">
+              <namedValue name="expectedMessage">
+                <value class="value" valueClass="string">Please verify that all products have 'Form Completed' checked before sending for Dealer signature.</value>
+              </namedValue>
+              <namedValue name="response">
+                <value class="value" valueClass="string">OK</value>
+              </namedValue>
+              <namedValue name="wait"/>
+            </namedValues>
+          </value>
+        </argument>
+        <argument id="captureBefore"/>
+        <argument id="captureAfter">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+      </arguments>
     </apiCall>
   </steps>
   <params>

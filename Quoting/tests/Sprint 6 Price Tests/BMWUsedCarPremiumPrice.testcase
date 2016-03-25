@@ -2614,7 +2614,7 @@
                         </argument>
                       </arguments>
                       <parameterValueSources>
-                        <parameterValueSource url="excel:templates/ProductConfigFields.xls?worksheet=ProductConfigs&amp;range=A1%3AFW114&amp;namesLocation=FirstRowOfRange&amp;whereName=ProductTitle&amp;whereComparison=EqualTo&amp;whereValue=%7BProduct1%7D" variableName="ExcelData" variableScope="Test">
+                        <parameterValueSource url="excel:templates/ProductFieldsforProvar.xlsx?worksheet=Certified-Used&amp;range=A1%3ABL17&amp;namesLocation=FirstRowOfRange&amp;whereName=ProductTitle&amp;whereComparison=EqualTo&amp;whereValue=%7BProduct1%7D" variableName="ExcelData" variableScope="Test">
                           <cacheToken>C:/Users/jtjohn/Provar/Workspace/ProvarTesting2/Test/templates/FillData.xlsx;1438091420870</cacheToken>
                           <cachedParameters>
                             <apiParam name="RowNumber"/>
@@ -2993,7 +2993,7 @@
                         </argument>
                       </arguments>
                       <parameterValueSources>
-                        <parameterValueSource url="excel:templates/ProductConfigFields.xls?worksheet=ProductConfigs&amp;range=A1%3AFW114&amp;namesLocation=FirstRowOfRange&amp;whereName=ProductTitle&amp;whereComparison=EqualTo&amp;whereValue=%7BProduct2%7D" variableName="ExcelData" variableScope="Test">
+                        <parameterValueSource url="excel:templates/ProductFieldsforProvar.xlsx?worksheet=Certified-Used&amp;range=A1%3ABL17&amp;namesLocation=FirstRowOfRange&amp;whereName=ProductTitle&amp;whereComparison=EqualTo&amp;whereValue=%7BProduct2%7D" variableName="ExcelData" variableScope="Test">
                           <cacheToken>C:/Users/jtjohn/Provar/Workspace/ProvarTesting2/Test/templates/FillData.xlsx;1438091420870</cacheToken>
                           <cachedParameters>
                             <apiParam name="RowNumber"/>
@@ -3290,6 +3290,27 @@
                 </apiParam>
               </generatedParameters>
             </apiCall>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiHandleAlert" name="UiHandleAlert" testItemId="773" title="Handle UI Alerts">
+              <arguments>
+                <argument id="alerts">
+                  <value class="valueList" mutable="Mutable">
+                    <namedValues mutable="Mutable">
+                      <namedValue name="expectedMessage">
+                        <value class="value" valueClass="string">Please verify that all products have 'Form Completed' checked before sending for Dealer signature.</value>
+                      </namedValue>
+                      <namedValue name="response">
+                        <value class="value" valueClass="string">OK</value>
+                      </namedValue>
+                      <namedValue name="wait"/>
+                    </namedValues>
+                  </value>
+                </argument>
+                <argument id="captureBefore"/>
+                <argument id="captureAfter">
+                  <value class="value" valueClass="boolean">true</value>
+                </argument>
+              </arguments>
+            </apiCall>
           </steps>
         </clause>
       </clauses>
@@ -3397,19 +3418,19 @@
       <value class="value" valueClass="string">BMW Certified Pre-Owned Premium Plus 2012 Package 3</value>
     </argument>
     <argument id="Price1">
-      <value class="value" valueClass="string">2550.00</value>
+      <value class="value" valueClass="string">2895.00</value>
     </argument>
     <argument id="Price2">
-      <value class="value" valueClass="string">2460.00</value>
+      <value class="value" valueClass="string">2885.00</value>
     </argument>
     <argument id="Price1d">
-      <value class="value" valueClass="string">$2,550.00</value>
+      <value class="value" valueClass="string">$2,895.00</value>
     </argument>
     <argument id="Price2d">
-      <value class="value" valueClass="string">$2,460.00</value>
+      <value class="value" valueClass="string">$2,885.00</value>
     </argument>
     <argument id="Totald">
-      <value class="value" valueClass="string">$5,010.00</value>
+      <value class="value" valueClass="string">$5,780.00</value>
     </argument>
   </args>
 </testCase>
