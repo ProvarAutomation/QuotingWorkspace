@@ -9,12 +9,36 @@
   <browserDebugPort>0</browserDebugPort>
   <environments>
     <environment name="Quoting">
-      <summary>for Quoting/Pricing</summary>
+      <summary/>
     </environment>
     <environment name="Pricing">
       <summary/>
     </environment>
+    <environment name="qUAT">
+      <summary/>
+    </environment>
   </environments>
+  <variables>
+    <testVariable name="CrownKIADealerId">
+      <valueType class="textType">
+        <constraints>
+          <valueConstraint name="minLength">0</valueConstraint>
+          <valueConstraint name="maxLength">9999</valueConstraint>
+          <valueConstraint name="regex"/>
+        </constraints>
+      </valueType>
+      <summary>Crown KIA Dealer Id</summary>
+      <values>
+        <testVariableValue/>
+        <testVariableValue envName="Quoting">
+          <value class="value" valueClass="string">0011900000Dazi4</value>
+        </testVariableValue>
+        <testVariableValue envName="qUAT">
+          <value class="value" valueClass="string">0011800000KvNJb</value>
+        </testVariableValue>
+      </values>
+    </testVariable>
+  </variables>
   <connectionClasses>
     <connectionClass name="sf">
       <connections>

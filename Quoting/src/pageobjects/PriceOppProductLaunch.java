@@ -53,14 +53,17 @@ public class PriceOppProductLaunch {
 	@FindBy(xpath = "//label/span[text()='Lot Size']/../../input")
 	public WebElement LotSize;
 	
+	@PageWait.Timed(durationSeconds = 3)
 	@FindBy(xpath = "//label/span[text()='DMA:']/../../select")
 	@ChoiceListType()
 	public WebElement Dma;
 	
+	@PageWait.Timed(durationSeconds = 3)
 	@FindBy(xpath = "//label/span[text()='Alpha Zone:']/../../select")
 	@ChoiceListType()
 	public WebElement AlphaZone;
 	
+	@PageWait.Timed(durationSeconds = 3)
 	@FindBy(xpath = "//label/span[text()='Make:']/../../select")
 	@ChoiceListType()
 	public WebElement Make;

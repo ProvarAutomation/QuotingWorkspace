@@ -12,7 +12,7 @@ import com.provar.core.testapi.annotations.*;
 
 @Page( title="OrderConfig"                                
 , summary="Mega Page Object for Order Product Edit Configuration page"
-, remarks = "Follow naming conventions as listed in source", connection="Jason_Stage"
+, remarks = "Follow naming conventions as listed in source", connection="Admin"
 		)             
 public class OrderConfig {
 
