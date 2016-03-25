@@ -56,6 +56,7 @@
           <connectionUrls>
             <connectionUrl url="sf:user=jason.john@autotradergroup.com.quoting;environment=PROD_DEV;logonAsConnection=Admin"/>
             <connectionUrl envName="Quoting" url="sf:user=jason.john@autotradergroup.com.quoting;environment=PROD_DEV;logonAsConnection=Admin"/>
+            <connectionUrl envName="qUAT" url="sf:user=jason.john@autotradergroup.com.quat;environment=PROD_DEV;logonAsConnection=Admin"/>
           </connectionUrls>
         </connection>
       </connections>
