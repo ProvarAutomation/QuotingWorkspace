@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testProject selectedBrowserConfigurationName="Full Screen" selectedEnvironment="Quoting" selectedWebBrowserType="Chrome">
+<testProject selectedBrowserConfigurationName="Full Screen" selectedEnvironment="qUAT" selectedWebBrowserType="Chrome">
   <title>/Quoting/.testproject</title>
   <configPath>config</configPath>
   <testsPath>tests</testsPath>
@@ -48,12 +48,14 @@
             <connectionUrl secureStorageNodeId="9a48d965-7876-48d5-b805-5d30e209902f" url="sf:user=provar.tester@coxauto.com.quoting;password={password};environment=SANDBOX"/>
             <connectionUrl envName="Quoting" secureStorageNodeId="1b9d7efb-9c42-4ae1-a35c-c5e732931a73" url="sf:user=provar.tester@coxauto.com.quoting;password={password};environment=SANDBOX"/>
             <connectionUrl envName="Pricing" secureStorageNodeId="bb430fa7-fde3-426a-b36f-4f67e6c691f7" url="sf:user=provar.tester@coxauto.com.pricing;password={password};environment=SANDBOX"/>
+            <connectionUrl envName="qUAT" secureStorageNodeId="a4276f5d-046e-4d90-996e-59b231e3bf40" url="sf:user=provar.tester@coxauto.com.quat;password={password};environment=SANDBOX"/>
           </connectionUrls>
         </connection>
         <connection name="JasonJohn">
           <summary>Jason John's COE System Admin Account</summary>
           <connectionUrls>
             <connectionUrl url="sf:user=jason.john@autotradergroup.com.quoting;environment=PROD_DEV;logonAsConnection=Admin"/>
+            <connectionUrl envName="Quoting" url="sf:user=jason.john@autotradergroup.com.quoting;environment=PROD_DEV;logonAsConnection=Admin"/>
           </connectionUrls>
         </connection>
       </connections>
