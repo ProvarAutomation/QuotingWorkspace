@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testCase id="2">
+<testCase id="4">
   <summary/>
   <steps>
     <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="329" title="Create Opp">
@@ -3659,7 +3659,7 @@
                   <value class="uiTarget" uri="ui:pageobject:target?pageId=pageobjects.OrderConfig"/>
                 </argument>
                 <argument id="navigate">
-                  <value class="value" valueClass="string">Dont</value>
+                  <value class="value" valueClass="string">Always</value>
                 </argument>
                 <argument id="targetDescription">
                   <value class="value" valueClass="string">On OrderConfig page</value>
@@ -4038,7 +4038,7 @@
                   <value class="uiTarget" uri="ui:pageobject:target?pageId=pageobjects.OrderConfig"/>
                 </argument>
                 <argument id="navigate">
-                  <value class="value" valueClass="string">Dont</value>
+                  <value class="value" valueClass="string">Always</value>
                 </argument>
                 <argument id="targetDescription">
                   <value class="value" valueClass="string">On OrderConfig page</value>
@@ -4064,7 +4064,7 @@
                         </argument>
                       </arguments>
                       <parameterValueSources>
-                        <parameterValueSource url="excel:templates/PriceProductGroups.xlsx?worksheet=Alphazone-Make-Counties&amp;range=A1%3ACI7&amp;namesLocation=FirstRowOfRange&amp;whereName=ProductTitle&amp;whereComparison=EqualTo&amp;whereValue=%7BProduct2%7D" variableName="ExcelData" variableScope="Test">
+                        <parameterValueSource url="excel:templates/PriceProductGroups.xlsx?worksheet=AlphazoneMakeCounties&amp;range=A1%3ACI7&amp;namesLocation=FirstRowOfRange&amp;whereName=ProductTitle&amp;whereComparison=EqualTo&amp;whereValue=%7BProduct2%7D" variableName="ExcelData" variableScope="Test">
                           <cacheToken>C:/Users/jtjohn/Provar/Workspace/ProvarTesting2/Test/templates/FillData.xlsx;1438091420870</cacheToken>
                           <cachedParameters>
                             <apiParam name="RowNumber"/>
@@ -4418,7 +4418,7 @@
                   <value class="uiTarget" uri="ui:pageobject:target?pageId=pageobjects.OrderConfig"/>
                 </argument>
                 <argument id="navigate">
-                  <value class="value" valueClass="string">Dont</value>
+                  <value class="value" valueClass="string">Always</value>
                 </argument>
                 <argument id="targetDescription">
                   <value class="value" valueClass="string">On OrderConfig page</value>
@@ -4444,7 +4444,7 @@
                         </argument>
                       </arguments>
                       <parameterValueSources>
-                        <parameterValueSource url="excel:templates/PriceProductGroups.xlsx?worksheet=Alphazone-Make-Counties&amp;range=A1%3ACI7&amp;namesLocation=FirstRowOfRange&amp;whereName=ProductTitle&amp;whereComparison=EqualTo&amp;whereValue=%7BProduct3%7D" variableName="ExcelData" variableScope="Test">
+                        <parameterValueSource url="excel:templates/PriceProductGroups.xlsx?worksheet=AlphazoneMakeCounties&amp;range=A1%3ACI7&amp;namesLocation=FirstRowOfRange&amp;whereName=ProductTitle&amp;whereComparison=EqualTo&amp;whereValue=%7BProduct3%7D" variableName="ExcelData" variableScope="Test">
                           <cacheToken>C:/Users/jtjohn/Provar/Workspace/ProvarTesting2/Test/templates/FillData.xlsx;1438091420870</cacheToken>
                           <cachedParameters>
                             <apiParam name="RowNumber"/>
@@ -4741,6 +4741,27 @@
                 </apiParam>
               </generatedParameters>
             </apiCall>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiHandleAlert" name="UiHandleAlert" testItemId="781" title="Handle UI Alerts">
+              <arguments>
+                <argument id="alerts">
+                  <value class="valueList" mutable="Mutable">
+                    <namedValues mutable="Mutable">
+                      <namedValue name="expectedMessage">
+                        <value class="value" valueClass="string">Please verify that all products have 'Form Completed' checked before sending for Dealer signature.</value>
+                      </namedValue>
+                      <namedValue name="response">
+                        <value class="value" valueClass="string">OK</value>
+                      </namedValue>
+                      <namedValue name="wait"/>
+                    </namedValues>
+                  </value>
+                </argument>
+                <argument id="captureBefore"/>
+                <argument id="captureAfter">
+                  <value class="value" valueClass="boolean">true</value>
+                </argument>
+              </arguments>
+            </apiCall>
           </steps>
         </clause>
       </clauses>
@@ -4752,27 +4773,6 @@
           </type>
         </apiParam>
       </generatedParameters>
-    </apiCall>
-    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiHandleAlert" name="UiHandleAlert" testItemId="779" title="Handle UI Alerts">
-      <arguments>
-        <argument id="alerts">
-          <value class="valueList" mutable="Mutable">
-            <namedValues mutable="Mutable">
-              <namedValue name="expectedMessage">
-                <value class="value" valueClass="string">Please verify that all products have 'Form Completed' checked before sending for Dealer signature.</value>
-              </namedValue>
-              <namedValue name="response">
-                <value class="value" valueClass="string">OK</value>
-              </namedValue>
-              <namedValue name="wait"/>
-            </namedValues>
-          </value>
-        </argument>
-        <argument id="captureBefore"/>
-        <argument id="captureAfter">
-          <value class="value" valueClass="boolean">true</value>
-        </argument>
-      </arguments>
     </apiCall>
   </steps>
   <params>

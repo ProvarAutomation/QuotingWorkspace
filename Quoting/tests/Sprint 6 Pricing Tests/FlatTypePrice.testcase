@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testCase id="13">
+<testCase id="8">
   <summary/>
   <steps>
     <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="329" title="Create Opp">
@@ -2909,7 +2909,7 @@
                                 </argument>
                               </arguments>
                               <parameterValueSources>
-                                <parameterValueSource url="excel:templates/Product_Configs_Provar.xlsx?worksheet=ProductConfigs&amp;range=A1%3AFM118&amp;namesLocation=FirstRowOfRange&amp;whereName=ProductTitle&amp;whereComparison=EqualTo&amp;whereValue=%7BProductIteration%7D" variableName="ExcelData" variableScope="Test">
+                                <parameterValueSource url="excel:templates/PriceProductGroups.xlsx?worksheet=Flat&amp;range=A1%3ABA22&amp;namesLocation=FirstRowOfRange&amp;whereName=ProductTitle&amp;whereComparison=EqualTo&amp;whereValue=%7BProductIteration%7D" variableName="ExcelData" variableScope="Test">
                                   <cacheToken>C:/Users/bjweber/Provar Projects/QuotingWorkspace/Quoting/templates/Product_Configs_Provar.xlsx;1458574463638</cacheToken>
                                   <cachedParameters>
                                     <apiParam name="RowNumber"/>
@@ -3361,6 +3361,66 @@
         </textType>
       </type>
     </param>
+    <param name="StandardPriority2011Price" title="Standard Priority 2011 Price">
+      <summary/>
+      <type>
+        <textType>
+          <constraints>
+            <valueConstraint name="minLength">0</valueConstraint>
+            <valueConstraint name="maxLength">9999</valueConstraint>
+            <valueConstraint name="regex"/>
+          </constraints>
+        </textType>
+      </type>
+    </param>
+    <param name="TIMBuyingCenterPrice" title="TIM Buying Center Price">
+      <summary/>
+      <type>
+        <textType>
+          <constraints>
+            <valueConstraint name="minLength">0</valueConstraint>
+            <valueConstraint name="maxLength">9999</valueConstraint>
+            <valueConstraint name="regex"/>
+          </constraints>
+        </textType>
+      </type>
+    </param>
+    <param name="TIMBuyingCenterKBBPrice" title="TIM Buying Center KBB Price">
+      <summary/>
+      <type>
+        <textType>
+          <constraints>
+            <valueConstraint name="minLength">0</valueConstraint>
+            <valueConstraint name="maxLength">9999</valueConstraint>
+            <valueConstraint name="regex"/>
+          </constraints>
+        </textType>
+      </type>
+    </param>
+    <param name="TIMVehicleValuatorPlusPrice" title="TIM Vehicle Valuator Plus Price">
+      <summary/>
+      <type>
+        <textType>
+          <constraints>
+            <valueConstraint name="minLength">0</valueConstraint>
+            <valueConstraint name="maxLength">9999</valueConstraint>
+            <valueConstraint name="regex"/>
+          </constraints>
+        </textType>
+      </type>
+    </param>
+    <param name="VideoProPrice" title="Video Pro Price">
+      <summary/>
+      <type>
+        <textType>
+          <constraints>
+            <valueConstraint name="minLength">0</valueConstraint>
+            <valueConstraint name="maxLength">9999</valueConstraint>
+            <valueConstraint name="regex"/>
+          </constraints>
+        </textType>
+      </type>
+    </param>
   </params>
   <args>
     <argument id="OEMSEMBusinessLinkPrice">
@@ -3400,10 +3460,25 @@
       <value class="value" valueClass="string">$500.00</value>
     </argument>
     <argument id="Total">
-      <value class="value" valueClass="string">$7,400.00</value>
+      <value class="value" valueClass="string">$16,074.00</value>
     </argument>
     <argument id="FastAdsVehicleVideoPlat2Price">
       <value class="value" valueClass="string">$600.00</value>
+    </argument>
+    <argument id="StandardPriority2011Price">
+      <value class="value" valueClass="string">$99.00</value>
+    </argument>
+    <argument id="TIMBuyingCenterPrice">
+      <value class="value" valueClass="string">$2,825.00</value>
+    </argument>
+    <argument id="TIMBuyingCenterKBBPrice">
+      <value class="value" valueClass="string">$4,650.00</value>
+    </argument>
+    <argument id="TIMVehicleValuatorPlusPrice">
+      <value class="value" valueClass="string">$700.00</value>
+    </argument>
+    <argument id="VideoProPrice">
+      <value class="value" valueClass="string">$400.00</value>
     </argument>
   </args>
   <tags/>
