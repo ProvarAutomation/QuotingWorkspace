@@ -9,17 +9,25 @@
   <browserDebugPort>0</browserDebugPort>
   <environments>
     <environment name="Quoting">
-      <summary>for Quoting/Pricing</summary>
+      <summary/>
     </environment>
     <environment name="Pricing">
       <summary/>
     </environment>
     <environment name="qUAT">
+<<<<<<< HEAD
       <summary>Quoting User Acceptance Testing</summary>
     </environment>
   </environments>
   <variables>
     <testVariable name="SandboxDealer">
+=======
+      <summary/>
+    </environment>
+  </environments>
+  <variables>
+    <testVariable name="CrownKIADealerId">
+>>>>>>> b8745ac87bce71e484171cdfc673cacc51ace9ac
       <valueType class="textType">
         <constraints>
           <valueConstraint name="minLength">0</valueConstraint>
@@ -27,6 +35,7 @@
           <valueConstraint name="regex"/>
         </constraints>
       </valueType>
+<<<<<<< HEAD
       <summary/>
       <values>
         <testVariableValue/>
@@ -35,6 +44,16 @@
         </testVariableValue>
         <testVariableValue envName="Quoting">
           <value class="value" valueClass="string">0011900000Dazi4AAB</value>
+=======
+      <summary>Crown KIA Dealer Id</summary>
+      <values>
+        <testVariableValue/>
+        <testVariableValue envName="Quoting">
+          <value class="value" valueClass="string">0011900000Dazi4</value>
+        </testVariableValue>
+        <testVariableValue envName="qUAT">
+          <value class="value" valueClass="string">0011800000KvNJb</value>
+>>>>>>> b8745ac87bce71e484171cdfc673cacc51ace9ac
         </testVariableValue>
       </values>
     </testVariable>
@@ -48,13 +67,18 @@
             <connectionUrl secureStorageNodeId="9a48d965-7876-48d5-b805-5d30e209902f" url="sf:user=provar.tester@coxauto.com.quoting;password={password};environment=SANDBOX"/>
             <connectionUrl envName="Quoting" secureStorageNodeId="1b9d7efb-9c42-4ae1-a35c-c5e732931a73" url="sf:user=provar.tester@coxauto.com.quoting;password={password};environment=SANDBOX"/>
             <connectionUrl envName="Pricing" secureStorageNodeId="bb430fa7-fde3-426a-b36f-4f67e6c691f7" url="sf:user=provar.tester@coxauto.com.pricing;password={password};environment=SANDBOX"/>
+<<<<<<< HEAD
             <connectionUrl envName="qUAT" secureStorageNodeId="1452dcf2-c76c-4307-ae4e-9d33b6342a05" url="sf:user=provar.tester@coxauto.com.quat;password={password};environment=SANDBOX"/>
+=======
+            <connectionUrl envName="qUAT" secureStorageNodeId="a4276f5d-046e-4d90-996e-59b231e3bf40" url="sf:user=provar.tester@coxauto.com.quat;password={password};environment=SANDBOX"/>
+>>>>>>> b8745ac87bce71e484171cdfc673cacc51ace9ac
           </connectionUrls>
         </connection>
         <connection name="JasonJohn">
           <summary>Jason John's COE System Admin Account</summary>
           <connectionUrls>
             <connectionUrl url="sf:user=jason.john@autotradergroup.com.quoting;environment=PROD_DEV;logonAsConnection=Admin"/>
+<<<<<<< HEAD
             <connectionUrl envName="qUAT" url="sf:user=jason.john@autotradergroup.com.quat;environment=PROD_DEV;logonAsConnection=Admin"/>
             <connectionUrl envName="Quoting" url="sf:user=jason.john@autotradergroup.com.quoting;environment=PROD_DEV;logonAsConnection=Admin"/>
           </connectionUrls>
@@ -63,6 +87,10 @@
           <summary/>
           <connectionUrls>
             <connectionUrl url="sf:user=dof.sales.test@atg.com.quat;environment=PROD_DEV;logonAsConnection=Admin"/>
+=======
+            <connectionUrl envName="Quoting" url="sf:user=jason.john@autotradergroup.com.quoting;environment=PROD_DEV;logonAsConnection=Admin"/>
+            <connectionUrl envName="qUAT" url="sf:user=jason.john@autotradergroup.com.quat;environment=PROD_DEV;logonAsConnection=Admin"/>
+>>>>>>> b8745ac87bce71e484171cdfc673cacc51ace9ac
           </connectionUrls>
         </connection>
       </connections>

@@ -12,14 +12,10 @@ import com.provar.core.testapi.annotations.*;
 
 @Page( title="OrderConfig"                                
 , summary="Mega Page Object for Order Product Edit Configuration page"
-, remarks = "Follow naming conventions as listed in source", connection="Jason_Stage"
+, remarks = "Follow naming conventions as listed in source", connection="Admin"
 		)             
 public class OrderConfig {
 
-	@TextType()
-	@FindByLabel(label = "County", labelType = LabelType.PrecedingCell, qualifierXpath = "input")
-	public WebElement County;
-	
 	@TextType()
 	@FindByLabel(label = "Line Description", labelType = LabelType.PrecedingCell, qualifierXpath = "input")
 	public WebElement LineDescription;
@@ -32,12 +28,6 @@ public class OrderConfig {
 	@TextType()
     @FindBy(xpath = "//label[normalize-space(text())=\"BMW's Dealer Center ID\"]/../following-sibling::td[1]//input")
     public WebElement BMWDealerCenterID;
-	@TextType()
-	@FindByLabel(label = "Porsche Dealer Code", labelType = LabelType.PrecedingCell, qualifierXpath = "input")
-    public WebElement PorscheDealerCode;
-	@TextType()
-	@FindByLabel(label = "Porsche Inventory Quantity", labelType = LabelType.PrecedingCell, qualifierXpath = "input")
-    public WebElement PorscheInventoryQuantity;
 	@TextType()
 	@FindByLabel(label = "Notes", labelType = LabelType.PrecedingCell, qualifierXpath = "input")
 	public WebElement Notes;
@@ -85,7 +75,7 @@ public class OrderConfig {
 	public WebElement SitelinkUsedAdvanced;
 	@BooleanType()
 	@FindByLabel(label = "Sitelink Used Pro OPT IN", labelType = LabelType.PrecedingCell, qualifierXpath = "input")
-	public WebElement SitelinkUsedProOPTIN;
+	public WebElement SitelinkUsedProOptIn;
 	@BooleanType()
 	@FindByLabel(label = "Sitelink Used Use Existing", labelType = LabelType.PrecedingCell, qualifierXpath = "input")
 	public WebElement SitelinkUsedUseExisting;
@@ -806,13 +796,13 @@ public class OrderConfig {
 	public WebElement KBBShowcaseTextEmailAddress;
 	@TextType()
 	@FindByLabel(label = "Leaderboard New Click-thru URL", labelType = LabelType.PrecedingCell, qualifierXpath = "input")
-	public WebElement LeaderboardNewClickthruURL;
+	public WebElement LeaderboardNewClickThruURL;
 	@TextType()
 	@FindByLabel(label = "Leaderboard New Co-Op Pre-Approval Case", labelType = LabelType.PrecedingCell, qualifierXpath = "input")
 	public WebElement LeaderboardNewCoOpPreApprovalCase;
 	@TextType()
 	@FindByLabel(label = "Leaderboard Used Click-thru URL", labelType = LabelType.PrecedingCell, qualifierXpath = "input")
-	public WebElement LeaderboardUsedClickthruURL;
+	public WebElement LeaderboardUsedClickThruURL;
 	@TextType()
 	@FindByLabel(label = "Leaderboard Used Co-Op Pre-Approval Case", labelType = LabelType.PrecedingCell, qualifierXpath = "input")
 	public WebElement LeaderboardUsedCoOpPreApprovalCase;
@@ -958,9 +948,6 @@ public class OrderConfig {
 	@TextType()
 	@FindByLabel(label = "Co-op Contact Email 1", labelType = LabelType.PrecedingCell, qualifierXpath = "input")
 	public WebElement CoOpContactEmail1;
-	@TextType()
-	@FindByLabel(label = "Non-reimbursable amount", labelType = LabelType.PrecedingCell, qualifierXpath = "input")
-	public WebElement NonReimbursableAmount;
 	@TextType()
 	@FindByLabel(label = "Co-op Contact Email", labelType = LabelType.PrecedingCell, qualifierXpath = "input")
 	public WebElement CoOpContactEmail;
