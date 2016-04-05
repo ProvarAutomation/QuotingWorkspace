@@ -948,9 +948,6 @@ public class OrderConfig {
 	@FindByLabel(label = "Used Co-op Contact Email 1", labelType = LabelType.PrecedingCell, qualifierXpath = "input")
 	public WebElement UsedCoOpContactEmail1;
 	@TextType()
-	@FindByLabel(label = "KBB Lead Driver Make 1", labelType = LabelType.PrecedingCell, qualifierXpath = "input")
-	public WebElement KBBLeadDriverMake1;
-	@TextType()
 	@FindByLabel(label = "Dealer Website URL 1", labelType = LabelType.PrecedingCell, qualifierXpath = "input")
 	public WebElement DealerWebsiteURL1;
 	@TextType()
