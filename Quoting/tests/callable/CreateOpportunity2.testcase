@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testCase id="7" registryId="6359cd97-cdc9-4cff-80ea-128c23a5ab1c" visibility="Internal">
+<testCase id="14" registryId="6359cd97-cdc9-4cff-80ea-128c23a5ab1c" visibility="Internal">
   <summary>undefined</summary>
   <remarks>undefined</remarks>
   <steps>
-    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" name="ApexConnect" testItemId="1" title="Salesforce Connect: Admin (Test)">
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" name="ApexConnect" testItemId="173" title="Salesforce Connect: QUATSalesUser (Test)">
       <arguments>
-        <argument argId="d0ca7dbb-6373-47fe-bbe2-64c6b2ae949f" id="connectionName">
-          <value class="value" valueClass="string">JasonJohn</value>
+        <argument id="connectionName">
+          <value class="value" valueClass="string">QUATSalesUser</value>
         </argument>
         <argument id="resultName">
-          <value class="value" valueClass="string">Admin</value>
+          <value class="value" valueClass="string">QUATSalesUser</value>
         </argument>
         <argument id="resultScope">
           <value class="value" valueClass="string">Test</value>
         </argument>
-        <argument id="uiApplicationName"/>
-        <argument id="quickUiLogin">
-          <value class="value" valueClass="boolean">true</value>
-        </argument>
-        <argument id="closeAllPrimaryTabs">
-          <value class="value" valueClass="boolean">true</value>
-        </argument>
-        <argument argId="85abd676-b28e-4b13-a446-9d299babf4dc" id="reuseConnectionName">
+        <argument id="reuseConnectionName">
           <value class="variable">
             <path element="reuseConnectionName"/>
           </value>
         </argument>
         <argument id="alreadyOpenBehaviour">
-          <value class="value" valueClass="string">Fail</value>
+          <value class="value" valueClass="string">Reuse</value>
+        </argument>
+        <argument id="uiApplicationName"/>
+        <argument id="closeAllPrimaryTabs">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="quickUiLogin">
+          <value class="value" valueClass="boolean">true</value>
         </argument>
         <argument id="vfDebug"/>
         <argument id="enableObjectIdLogging">
@@ -38,8 +38,8 @@
         <argument id="logFileLocation"/>
         <argument id="username"/>
         <argument id="password"/>
-        <argument id="environment"/>
         <argument id="securityToken"/>
+        <argument id="environment"/>
       </arguments>
     </apiCall>
     <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="164" title="Create a Test Opportunity with a name (passed-in)">
@@ -54,7 +54,7 @@
             <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="119" title="On SF Opportunity home screen">
               <arguments>
                 <argument id="uiConnectionName">
-                  <value class="value" valueClass="string">Admin</value>
+                  <value class="value" valueClass="string">QUATSalesUser</value>
                 </argument>
                 <argument id="target">
                   <value class="uiTarget" uri="sf:ui:target?object=Opportunity&amp;action=ObjectHome"/>
@@ -92,9 +92,12 @@
                         <argument id="interactionDescription">
                           <value class="value" valueClass="string">Click the New button</value>
                         </argument>
+                        <argument id="wait"/>
+                        <argument id="captureBefore"/>
+                        <argument id="captureAfter"/>
                       </arguments>
                       <generatedParameters>
-                        <apiParam group="value" name="hover" title="Hover before Clicking">
+                        <apiParam group="value" name="hover" seq="10000" title="Hover before Clicking">
                           <summary>Whether the mouse should hover over the field before it is clicked.</summary>
                           <type>
                             <booleanType/>
@@ -109,7 +112,7 @@
             <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="122" title="On SF Opportunity new (ATC) screen">
               <arguments>
                 <argument id="uiConnectionName">
-                  <value class="value" valueClass="string">Admin</value>
+                  <value class="value" valueClass="string">QUATSalesUser</value>
                 </argument>
                 <argument id="target">
                   <value class="uiTarget" uri="sf:ui:target?object=Opportunity&amp;action=New&amp;recordType=ATC"/>
@@ -170,7 +173,7 @@
                             <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="125" title="On SF Account lookup screen">
                               <arguments>
                                 <argument id="uiConnectionName">
-                                  <value class="value" valueClass="string">Admin</value>
+                                  <value class="value" valueClass="string">QUATSalesUser</value>
                                 </argument>
                                 <argument id="target">
                                   <value class="uiTarget" uri="sf:ui:target?lookup=Account"/>
@@ -300,7 +303,7 @@
                         <argument id="captureAfter"/>
                       </arguments>
                       <generatedParameters>
-                        <apiParam group="value" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Name" name="value" title="Value">
+                        <apiParam group="value" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Name" name="value" seq="10000" title="Value">
                           <summary>The value to be populated.</summary>
                           <type>
                             <textType>
@@ -311,13 +314,13 @@
                             </textType>
                           </type>
                         </apiParam>
-                        <apiParam group="value" name="blur" title="Tab off field">
+                        <apiParam group="value" name="blur" seq="10001" title="Tab off field">
                           <summary>Whether the tab key should be pressed after the value is populated.</summary>
                           <type>
                             <booleanType/>
                           </type>
                         </apiParam>
-                        <apiParam group="value" name="pressEnter" title="Press Enter">
+                        <apiParam group="value" name="pressEnter" seq="10002" title="Press Enter">
                           <summary>Whether the Enter key should be pressed after the value is populated.</summary>
                           <type>
                             <booleanType/>
@@ -361,21 +364,29 @@
                         <argument id="interactionDescription">
                           <value class="value" valueClass="string">Set the Business Unit picklist to ATC Media</value>
                         </argument>
+                        <argument id="wait"/>
+                        <argument id="captureBefore"/>
+                        <argument id="captureAfter"/>
                       </arguments>
                       <generatedParameters>
-                        <apiParam group="value" name="value" title="Value">
+                        <apiParam group="value" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=BU__c" name="value" seq="10000" title="Value">
                           <summary>The value to be populated.</summary>
                           <type>
-                            <textType/>
+                            <choiceType>
+                              <constraints>
+                                <valueConstraint name="boundedValues">ATC Media:ATC Media|Haystak:Haystak|HomeNet:HomeNet|KBB:KBB|TIM:TIM|vAuto:vAuto|VinSolutions:VinSolutions</valueConstraint>
+                                <valueConstraint name="unrestricted">true</valueConstraint>
+                              </constraints>
+                            </choiceType>
                           </type>
                         </apiParam>
-                        <apiParam group="value" name="blur" title="Tab off field">
+                        <apiParam group="value" name="blur" seq="10001" title="Tab off field">
                           <summary>Whether the tab key should be pressed after the value is populated.</summary>
                           <type>
                             <booleanType/>
                           </type>
                         </apiParam>
-                        <apiParam group="value" name="pressEnter" title="Press Enter">
+                        <apiParam group="value" name="pressEnter" seq="10002" title="Press Enter">
                           <summary>Whether the Enter key should be pressed after the value is populated.</summary>
                           <type>
                             <booleanType/>
@@ -383,7 +394,7 @@
                         </apiParam>
                       </generatedParameters>
                     </apiCall>
-                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="152" title="Set the Dealer Interested Product field to Test Product">
+                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="152" title="Set the Dealer Interested Product field to {Identifier}">
                       <arguments>
                         <argument id="locator">
                           <value class="uiLocator" uri="ui:locator?name=Product_Line__c&amp;path=New%2FOpportunity+Information%2FLayoutRow%2FDealer+Interested+Product&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DOpportunity%26field%3DProduct_Line__c"/>
@@ -392,7 +403,9 @@
                           <value class="uiInteraction" uri="ui:interaction?name=set"/>
                         </argument>
                         <argument id="value">
-                          <value class="value" valueClass="string">Test Product</value>
+                          <value class="variable">
+                            <path element="Identifier"/>
+                          </value>
                         </argument>
                         <argument id="blur">
                           <value class="value" valueClass="boolean">false</value>
@@ -401,14 +414,14 @@
                           <value class="value" valueClass="boolean">false</value>
                         </argument>
                         <argument id="interactionDescription">
-                          <value class="value" valueClass="string">Set the Dealer Interested Product field to Test Product</value>
+                          <value class="value" valueClass="string">Set the Dealer Interested Product field to {Identifier}</value>
                         </argument>
                         <argument id="wait"/>
                         <argument id="captureBefore"/>
                         <argument id="captureAfter"/>
                       </arguments>
                       <generatedParameters>
-                        <apiParam group="value" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Product_Line__c" name="value" title="Value">
+                        <apiParam group="value" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Product_Line__c" name="value" seq="10000" title="Value">
                           <summary>The value to be populated.</summary>
                           <type>
                             <textType>
@@ -419,13 +432,13 @@
                             </textType>
                           </type>
                         </apiParam>
-                        <apiParam group="value" name="blur" title="Tab off field">
+                        <apiParam group="value" name="blur" seq="10001" title="Tab off field">
                           <summary>Whether the tab key should be pressed after the value is populated.</summary>
                           <type>
                             <booleanType/>
                           </type>
                         </apiParam>
-                        <apiParam group="value" name="pressEnter" title="Press Enter">
+                        <apiParam group="value" name="pressEnter" seq="10002" title="Press Enter">
                           <summary>Whether the Enter key should be pressed after the value is populated.</summary>
                           <type>
                             <booleanType/>
@@ -458,7 +471,7 @@
                         <argument id="captureAfter"/>
                       </arguments>
                       <generatedParameters>
-                        <apiParam group="value" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Type" name="value" title="Value">
+                        <apiParam group="value" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Type" name="value" seq="10000" title="Value">
                           <summary>The value to be populated.</summary>
                           <type>
                             <choiceType>
@@ -469,13 +482,13 @@
                             </choiceType>
                           </type>
                         </apiParam>
-                        <apiParam group="value" name="blur" title="Tab off field">
+                        <apiParam group="value" name="blur" seq="10001" title="Tab off field">
                           <summary>Whether the tab key should be pressed after the value is populated.</summary>
                           <type>
                             <booleanType/>
                           </type>
                         </apiParam>
-                        <apiParam group="value" name="pressEnter" title="Press Enter">
+                        <apiParam group="value" name="pressEnter" seq="10002" title="Press Enter">
                           <summary>Whether the Enter key should be pressed after the value is populated.</summary>
                           <type>
                             <booleanType/>
@@ -508,7 +521,7 @@
                         <argument id="captureAfter"/>
                       </arguments>
                       <generatedParameters>
-                        <apiParam group="value" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=StageName" name="value" title="Value">
+                        <apiParam group="value" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=StageName" name="value" seq="10000" title="Value">
                           <summary>The value to be populated.</summary>
                           <type>
                             <choiceType>
@@ -519,13 +532,13 @@
                             </choiceType>
                           </type>
                         </apiParam>
-                        <apiParam group="value" name="blur" title="Tab off field">
+                        <apiParam group="value" name="blur" seq="10001" title="Tab off field">
                           <summary>Whether the tab key should be pressed after the value is populated.</summary>
                           <type>
                             <booleanType/>
                           </type>
                         </apiParam>
-                        <apiParam group="value" name="pressEnter" title="Press Enter">
+                        <apiParam group="value" name="pressEnter" seq="10002" title="Press Enter">
                           <summary>Whether the Enter key should be pressed after the value is populated.</summary>
                           <type>
                             <booleanType/>
@@ -553,21 +566,29 @@
                         <argument id="interactionDescription">
                           <value class="value" valueClass="string">Set the Amount field to 100.00</value>
                         </argument>
+                        <argument id="wait"/>
+                        <argument id="captureBefore"/>
+                        <argument id="captureAfter"/>
                       </arguments>
                       <generatedParameters>
-                        <apiParam group="value" name="value" title="Value">
+                        <apiParam group="value" modelBinding="sf:ui:binding:object?object=Opportunity&amp;field=Amount" name="value" seq="10000" title="Value">
                           <summary>The value to be populated.</summary>
                           <type>
-                            <textType/>
+                            <numericType>
+                              <constraints>
+                                <valueConstraint name="length">18</valueConstraint>
+                                <valueConstraint name="decimalPlaces">2</valueConstraint>
+                              </constraints>
+                            </numericType>
                           </type>
                         </apiParam>
-                        <apiParam group="value" name="blur" title="Tab off field">
+                        <apiParam group="value" name="blur" seq="10001" title="Tab off field">
                           <summary>Whether the tab key should be pressed after the value is populated.</summary>
                           <type>
                             <booleanType/>
                           </type>
                         </apiParam>
-                        <apiParam group="value" name="pressEnter" title="Press Enter">
+                        <apiParam group="value" name="pressEnter" seq="10002" title="Press Enter">
                           <summary>Whether the Enter key should be pressed after the value is populated.</summary>
                           <type>
                             <booleanType/>
@@ -589,9 +610,12 @@
                         <argument id="interactionDescription">
                           <value class="value" valueClass="string">Click the Save and New button</value>
                         </argument>
+                        <argument id="wait"/>
+                        <argument id="captureBefore"/>
+                        <argument id="captureAfter"/>
                       </arguments>
                       <generatedParameters>
-                        <apiParam group="value" name="hover" title="Hover before Clicking">
+                        <apiParam group="value" name="hover" seq="10000" title="Hover before Clicking">
                           <summary>Whether the mouse should hover over the field before it is clicked.</summary>
                           <type>
                             <booleanType/>
@@ -620,6 +644,76 @@
                         <valueConstraint name="boundedValues">Global:Test Run|Folder:Test Folder|Test:Test Case|GroupStep:Group Step|Local:Test Step</valueConstraint>
                       </constraints>
                     </choiceType>
+                  </type>
+                </apiParam>
+              </generatedParameters>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="167" title="On ProductSelection page">
+              <arguments>
+                <argument id="uiConnectionName">
+                  <value class="value" valueClass="string">QUATSalesUser</value>
+                </argument>
+                <argument id="target">
+                  <value class="uiTarget" uri="ui:pageobject:target?pageId=pageobjects.ProductSelection"/>
+                </argument>
+                <argument id="navigate">
+                  <value class="value" valueClass="string">Dont</value>
+                </argument>
+                <argument id="targetDescription">
+                  <value class="value" valueClass="string">On ProductSelection page</value>
+                </argument>
+                <argument id="windowSelection">
+                  <value class="value" valueClass="string">Default</value>
+                </argument>
+                <argument id="windowSize">
+                  <value class="value" valueClass="string">Default</value>
+                </argument>
+                <argument id="closeWindow"/>
+                <argument id="captureBefore"/>
+                <argument id="captureAfter"/>
+                <argument id="uiTargetUrl"/>
+              </arguments>
+              <clauses>
+                <clause name="substeps" testItemId="168">
+                  <steps>
+                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="169" title="Click the Cancel">
+                      <arguments>
+                        <argument id="locator">
+                          <value class="uiLocator" uri="ui:pageobject:field?field=cancel&amp;pageId=pageobjects.ProductSelection"/>
+                        </argument>
+                        <argument id="interaction">
+                          <value class="uiInteraction" uri="ui:interaction?name=action"/>
+                        </argument>
+                        <argument id="hover">
+                          <value class="value" valueClass="boolean">false</value>
+                        </argument>
+                        <argument id="captureBefore">
+                          <value class="value" valueClass="boolean">false</value>
+                        </argument>
+                        <argument id="captureAfter">
+                          <value class="value" valueClass="boolean">false</value>
+                        </argument>
+                        <argument id="interactionDescription">
+                          <value class="value" valueClass="string">Click the Cancel</value>
+                        </argument>
+                        <argument id="wait"/>
+                      </arguments>
+                      <generatedParameters>
+                        <apiParam group="value" name="hover" seq="10000" title="Hover before Clicking">
+                          <summary>Whether the mouse should hover over the field before it is clicked.</summary>
+                          <type>
+                            <booleanType/>
+                          </type>
+                        </apiParam>
+                      </generatedParameters>
+                    </apiCall>
+                  </steps>
+                </clause>
+              </clauses>
+              <generatedParameters>
+                <apiParam group="target" name="uiTargetUrl" title="Web Page">
+                  <type>
+                    <textType/>
                   </type>
                 </apiParam>
               </generatedParameters>
@@ -771,7 +865,7 @@
         </textType>
       </type>
     </param>
-    <param name="ProductSelectionName" title="ProductName">
+    <param name="Identifier" title="Identifier">
       <summary>Product name for Product Selection list</summary>
       <type>
         <textType>
@@ -796,10 +890,16 @@
       </type>
     </param>
   </params>
+  <outputParams/>
   <args>
     <argument id="OpName"/>
     <argument id="reuseConnectionName"/>
-    <argument id="ProductSelectionName"/>
     <argument id="DealerName"/>
+    <argument id="Identifier"/>
   </args>
+  <outputArgs>
+    <outputArgument id="OpportunityId">
+      <name class="value" valueClass="string">OpportunityId</name>
+    </outputArgument>
+  </outputArgs>
 </testCase>

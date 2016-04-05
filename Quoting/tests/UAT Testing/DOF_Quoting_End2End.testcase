@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testCase id="13">
+<testCase id="15">
   <summary/>
   <steps>
     <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="11" title="Read Order Product List">
@@ -21,7 +21,39 @@
         <clause name="hidden" testItemId="746"/>
       </clauses>
     </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.If" name="If" testItemId="891" title="If: {Count(ProductNameList) = 0}">
+      <arguments>
+        <argument id="condition">
+          <value class="eq">
+            <lhs class="funcCall" id="Count">
+              <argument id="value">
+                <value class="variable">
+                  <path element="ProductNameList"/>
+                </value>
+              </argument>
+            </lhs>
+            <rhs class="value" valueClass="decimal">0</rhs>
+          </value>
+        </argument>
+      </arguments>
+      <clauses>
+        <clause name="then" testItemId="892">
+          <steps>
+            <apiCall apiId="com.provar.plugins.bundled.apis.control.Fail" name="Fail" testItemId="893" title="Fail Test: No Products Specified!">
+              <arguments>
+                <argument id="message">
+                  <value class="value" valueClass="string">No Products Specified!</value>
+                </argument>
+              </arguments>
+            </apiCall>
+          </steps>
+        </clause>
+      </clauses>
+    </apiCall>
     <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="764" title="Create Opp with Admin">
+      <tags>
+        <string>disabled</string>
+      </tags>
       <arguments>
         <argument id="description">
           <value class="value" valueClass="string">Create Opp with Admin</value>
@@ -82,7 +114,9 @@
                   <value class="value" valueClass="string">Admin</value>
                 </argument>
                 <argument id="AccountId">
-                  <value class="value" valueClass="string">0011900000Dazi4AAB</value>
+                  <value class="variable">
+                    <path element="SandboxDealer"/>
+                  </value>
                 </argument>
                 <argument id="RecordTypeId">
                   <value class="value" valueClass="string">ATC</value>
@@ -108,9 +142,7 @@
                 <argument id="ForecastCategoryName">
                   <value class="value" valueClass="string">Prospect</value>
                 </argument>
-                <argument id="Pricebook2Id">
-                  <value class="value" valueClass="string">01sE00000000vk4IAA</value>
-                </argument>
+                <argument id="Pricebook2Id"/>
                 <argument id="BU__c">
                   <value class="value" valueClass="string">ATC Media</value>
                 </argument>
@@ -168,7 +200,7 @@
     <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" name="ApexConnect" testItemId="763" title="Salesforce Connect: SalesforceConnection (Test)">
       <arguments>
         <argument id="connectionName">
-          <value class="value" valueClass="string">JasonJohn</value>
+          <value class="value" valueClass="string">QUATSalesUser</value>
         </argument>
         <argument id="reuseConnectionName"/>
         <argument id="resultName">
@@ -200,6 +232,20 @@
         <argument id="environment"/>
       </arguments>
     </apiCall>
+    <caseCall testCaseId="6359cd97-cdc9-4cff-80ea-128c23a5ab1c" testItemId="901">
+      <arguments>
+        <argument id="reuseConnectionName">
+          <value class="value" valueClass="string">SalesforceConnection</value>
+        </argument>
+        <argument id="OpName">
+          <value class="value" valueClass="string">Provar UAT Test</value>
+        </argument>
+        <argument id="ProductSelectionName"/>
+        <argument id="DealerName">
+          <value class="value" valueClass="string">Crown KIA</value>
+        </argument>
+      </arguments>
+    </caseCall>
     <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="26" title="On SF Opportunity view (ATC) screen">
       <tags/>
       <arguments>
@@ -210,7 +256,7 @@
           <value class="uiTarget" uri="sf:ui:target?object=Opportunity&amp;action=View&amp;recordType=ATC"/>
         </argument>
         <argument id="navigate">
-          <value class="value" valueClass="string">Always</value>
+          <value class="value" valueClass="string">Dont</value>
         </argument>
         <argument id="sfUiTargetObjectId">
           <value class="variable">
@@ -308,7 +354,22 @@
       <clauses>
         <clause name="substeps" testItemId="46">
           <steps>
+            <caseCall testCaseId="30e78145-a0fb-42dd-b3d0-9783d85d3a2a" testItemId="890">
+              <arguments>
+                <argument id="reuseConnectionName">
+                  <value class="value" valueClass="string">SalesforceConnection</value>
+                </argument>
+                <argument id="ProductNameList">
+                  <value class="variable">
+                    <path element="ProductNameList"/>
+                  </value>
+                </argument>
+              </arguments>
+            </caseCall>
             <apiCall apiId="com.provar.plugins.bundled.apis.control.ForEach" name="ForEach" testItemId="48" title="For Each: {ProductNameList}=&gt;ProductIteration">
+              <tags>
+                <string>disabled</string>
+              </tags>
               <arguments>
                 <argument id="list">
                   <value class="variable">
@@ -364,7 +425,7 @@
           <value class="uiTarget" uri="sf:ui:target?object=Opportunity&amp;action=View&amp;recordType=ATC"/>
         </argument>
         <argument id="navigate">
-          <value class="value" valueClass="string">Always</value>
+          <value class="value" valueClass="string">Dont</value>
         </argument>
         <argument id="sfUiTargetObjectId">
           <value class="variable">
@@ -930,7 +991,7 @@
                                         </clause>
                                       </clauses>
                                     </apiCall>
-                                    <apiCall apiId="com.provar.plugins.bundled.apis.If" name="If" testItemId="846" title="If: {ProductIteration.Product ~ &quot;.*Showcase.*&quot;}">
+                                    <apiCall apiId="com.provar.plugins.bundled.apis.If" name="If" testItemId="846" title="If: {ProductIteration.Product ~ &quot;.*KBB.*&quot;}">
                                       <arguments>
                                         <argument id="condition">
                                           <value class="match">
@@ -938,7 +999,7 @@
                                               <path element="ProductIteration"/>
                                               <path element="Product"/>
                                             </lhs>
-                                            <rhs class="value" valueClass="string">.*Showcase.*</rhs>
+                                            <rhs class="value" valueClass="string">.*KBB.*</rhs>
                                           </value>
                                         </argument>
                                       </arguments>
@@ -1850,19 +1911,19 @@
                 </apiParam>
               </generatedParameters>
             </apiCall>
-            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithRow" name="UiWithRow" testItemId="756" title="With Orders rows {1}">
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithRow" name="UiWithRow" testItemId="756" title="With RelatedOrderList rows 1">
               <arguments>
                 <argument id="uiConnectionName">
                   <value class="value" valueClass="string">SalesforceConnection</value>
                 </argument>
                 <argument id="locator">
-                  <value class="uiLocator" uri="sf:ui:locator:row?table=View%2FOrders%2FOrdersTable"/>
+                  <value class="uiLocator" uri="sf:ui:locator:row?table=View%2FRelatedOrderList%2FRelatedOrderListTable"/>
                 </argument>
                 <argument id="uiRowLocator">
-                  <value class="value" valueClass="decimal">1</value>
+                  <value class="value" valueClass="string">1</value>
                 </argument>
                 <argument id="locatorDescription">
-                  <value class="value" valueClass="string">With Orders rows {1}</value>
+                  <value class="value" valueClass="string">With RelatedOrderList rows 1</value>
                 </argument>
                 <argument id="failIfNotFound">
                   <value class="value" valueClass="boolean">true</value>
@@ -2406,6 +2467,7 @@
       </generatedParameters>
     </apiCall>
     <caseCall testCaseId="6c1f57c5-19a9-4455-9b85-507b834dd57f" testItemId="778">
+      <tags/>
       <arguments>
         <argument id="reuseConnectionName">
           <value class="value" valueClass="string">SalesforceConnection</value>
@@ -2418,6 +2480,7 @@
       </outputArguments>
     </caseCall>
     <caseCall testCaseId="c9793b55-a320-493b-a083-2857c3705177" testItemId="779">
+      <tags/>
       <arguments>
         <argument id="uiTargetUrl">
           <value class="variable">
@@ -2431,6 +2494,7 @@
       </arguments>
     </caseCall>
     <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="781" title="On SF Opportunity view (ATC) screen">
+      <tags/>
       <arguments>
         <argument id="uiConnectionName">
           <value class="value" valueClass="string">SalesforceConnection</value>
@@ -2463,6 +2527,7 @@
         <clause name="substeps" testItemId="782">
           <steps>
             <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithRow" name="UiWithRow" testItemId="783" title="With Quotes rows {1}">
+              <tags/>
               <arguments>
                 <argument id="uiConnectionName">
                   <value class="value" valueClass="string">SalesforceConnection</value>
@@ -2492,6 +2557,7 @@
                 <clause name="substeps" testItemId="784">
                   <steps>
                     <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="785" title="Click the QUOTE.QUOTENUMBER link">
+                      <tags/>
                       <arguments>
                         <argument id="locator">
                           <value class="uiLocator" uri="ui:locator?name=QUOTE_QUOTENUMBER&amp;rowLocator=1&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DOpportunity%26field%3DQUOTENUMBER%26relationship%3DQuotes"/>
@@ -2546,6 +2612,7 @@
       </generatedParameters>
     </apiCall>
     <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="786" title="On SF Quote detail (Quote Synced) screen">
+      <tags/>
       <arguments>
         <argument id="uiConnectionName">
           <value class="value" valueClass="string">SalesforceConnection</value>
@@ -2566,25 +2633,37 @@
       <clauses>
         <clause name="substeps" testItemId="787">
           <steps>
-            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithRow" name="UiWithRow" testItemId="788" title="With View/Orders/OrdersTable {1}">
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithRow" name="UiWithRow" testItemId="788" title="With RelatedOrderList rows 1">
+              <tags/>
               <arguments>
                 <argument id="uiConnectionName">
                   <value class="value" valueClass="string">SalesforceConnection</value>
                 </argument>
                 <argument id="locator">
-                  <value class="uiLocator" uri="sf:ui:locator:row?table=View%2FOrders%2FOrdersTable"/>
+                  <value class="uiLocator" uri="sf:ui:locator:row?table=View%2FRelatedOrderList%2FRelatedOrderListTable"/>
                 </argument>
                 <argument id="uiRowLocator">
-                  <value class="value" valueClass="decimal">1</value>
+                  <value class="value" valueClass="string">1</value>
                 </argument>
                 <argument id="locatorDescription">
-                  <value class="value" valueClass="string">With View/Orders/OrdersTable {1}</value>
+                  <value class="value" valueClass="string">With RelatedOrderList rows 1</value>
+                </argument>
+                <argument id="failIfNotFound">
+                  <value class="value" valueClass="boolean">true</value>
+                </argument>
+                <argument id="debugRowLocator"/>
+                <argument id="resultName">
+                  <value class="value" valueClass="string">Row</value>
+                </argument>
+                <argument id="resultScope">
+                  <value class="value" valueClass="string">Local</value>
                 </argument>
               </arguments>
               <clauses>
                 <clause name="substeps" testItemId="789">
                   <steps>
                     <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="790" title="Click the ORDERS.ORDER_NUMBER link">
+                      <tags/>
                       <arguments>
                         <argument id="locator">
                           <value class="uiLocator" uri="ui:locator?name=ORDERS_ORDER_NUMBER&amp;rowLocator=1&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DQuote%26field%3DORDER_NUMBER%26relationship%3DOrders"/>
@@ -2617,6 +2696,14 @@
                   </steps>
                 </clause>
               </clauses>
+              <generatedParameters>
+                <apiParam group="options" name="autoPaginate" title="Auto Paginate">
+                  <summary>Whether Show More/Next is clicked till the match condition succeeds.</summary>
+                  <type>
+                    <booleanType/>
+                  </type>
+                </apiParam>
+              </generatedParameters>
             </apiCall>
           </steps>
         </clause>
@@ -2631,6 +2718,7 @@
       </generatedParameters>
     </apiCall>
     <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="791" title="On SF Order view (Order Master Layout) screen">
+      <tags/>
       <arguments>
         <argument id="uiConnectionName">
           <value class="value" valueClass="string">SalesforceConnection</value>
@@ -2661,6 +2749,7 @@
         <clause name="substeps" testItemId="792">
           <steps>
             <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiAssert" name="UiAssert" testItemId="793" title="UI Assert">
+              <tags/>
               <arguments>
                 <argument id="resultName">
                   <value class="value" valueClass="string">Values</value>
@@ -2683,6 +2772,12 @@
                 <argument id="captureAfter">
                   <value class="value" valueClass="boolean">false</value>
                 </argument>
+                <argument id="columnAssertions">
+                  <value class="valueList" mutable="Mutable"/>
+                </argument>
+                <argument id="pageAssertions">
+                  <value class="valueList" mutable="Mutable"/>
+                </argument>
               </arguments>
             </apiCall>
           </steps>
@@ -2696,19 +2791,6 @@
           </type>
         </apiParam>
       </generatedParameters>
-    </apiCall>
-    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexDeleteObject" name="ApexDeleteObject" testItemId="770" title="Delete Object: {OpportunityId}">
-      <tags/>
-      <arguments>
-        <argument id="apexConnectionName">
-          <value class="value" valueClass="string">SalesforceConnection</value>
-        </argument>
-        <argument id="objectId">
-          <value class="variable">
-            <path element="OpportunityId"/>
-          </value>
-        </argument>
-      </arguments>
     </apiCall>
   </steps>
   <params/>
