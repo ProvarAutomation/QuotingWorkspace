@@ -112,5 +112,9 @@ public class PriceOppProductLaunch {
 	@FindBy(css = "div.slds-m-top--large input[type='button'][value='+']")
 	public WebElement AddCounty;
 
+	@TextType()
+	@FindBy(xpath = "//div[3]//div/span")
+	public WebElement NoPricingDataMsg;
+
 
 }
