@@ -101,10 +101,12 @@
                 <argument id="interactionDescription">
                   <value class="value" valueClass="string">Click the Dealership Authorized Signature</value>
                 </argument>
-                <argument id="wait"/>
+                <argument id="wait">
+                  <value class="uiWait" uri="ui:wait:pageload?timeout=60"/>
+                </argument>
               </arguments>
               <generatedParameters>
-                <apiParam group="value" name="hover" title="Hover before Clicking">
+                <apiParam group="value" name="hover" seq="10000" title="Hover before Clicking">
                   <summary>Whether the mouse should hover over the field before it is clicked.</summary>
                   <type>
                     <booleanType/>

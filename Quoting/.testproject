@@ -65,6 +65,14 @@
             <connectionUrl url="sf:user=dof.sales.test@atg.com.quat;environment=PROD_DEV;logonAsConnection=Admin"/>
           </connectionUrls>
         </connection>
+        <connection name="PricingTeam">
+          <summary/>
+          <connectionUrls>
+            <connectionUrl url="sf:user=aster.lakene@autotrader.com.quat;environment=PROD_DEV;logonAsConnection=Admin"/>
+            <connectionUrl envName="Quoting" url="sf:user=aster.lakene@autotrader.com.quoting;environment=PROD_DEV;logonAsConnection=Admin"/>
+            <connectionUrl envName="qUAT" url="sf:user=aster.lakene@autotrader.com.quat;environment=PROD_DEV;logonAsConnection=Admin"/>
+          </connectionUrls>
+        </connection>
       </connections>
     </connectionClass>
     <connectionClass name="google">

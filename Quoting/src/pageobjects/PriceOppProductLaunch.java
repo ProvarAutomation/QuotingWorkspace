@@ -116,5 +116,18 @@ public class PriceOppProductLaunch {
 	@FindBy(xpath = "//div[3]//div/span")
 	public WebElement NoPricingDataMsg;
 
+	@TextType()
+	@FindBy(css = "div.error.uiMessage")
+	public WebElement ErrorUi;
+
+	@ButtonType()
+	@FindByLabel(label = "Override")
+	public WebElement override;
+
+	@PageWait.Field(timeoutSeconds = 10)
+	@TextType()
+	@FindBy(xpath = "//label/span[text()='Rate Card:']/../../input")
+	public WebElement RateCardOverrideAmt;
+
 
 }
