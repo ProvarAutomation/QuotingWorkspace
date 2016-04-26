@@ -2013,7 +2013,7 @@
                                 </argument>
                               </arguments>
                               <parameterValueSources>
-                                <parameterValueSource url="excel:templates/Product_Configs_Provar.xlsx?worksheet=ProductConfigs&amp;range=A1%3AEW118&amp;namesLocation=FirstRowOfRange&amp;whereName=ProductTitle&amp;whereComparison=EqualTo&amp;whereValue=%7BProductIteration.Product%7D" variableName="ExcelData" variableScope="Test">
+                                <parameterValueSource url="excel:templates/Product_Configs_Provar.xlsx?worksheet=ProductConfigs&amp;range=A1%3AZZ118&amp;namesLocation=FirstRowOfRange&amp;whereName=ProductTitle&amp;whereComparison=EqualTo&amp;whereValue=%7BProductIteration.Product%7D" variableName="ExcelData" variableScope="Test">
                                   <cacheToken>C:/Users/jtjohn/Provar/Workspace/ProvarTesting2/Test/templates/FillData.xlsx;1438091420870</cacheToken>
                                   <cachedParameters>
                                     <apiParam name="RowNumber"/>
