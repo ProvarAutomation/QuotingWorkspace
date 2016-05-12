@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testCase id="1">
+<testCase id="12">
   <summary/>
   <steps>
     <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="11" title="Read Order Product List">
@@ -691,7 +691,7 @@
                                       </arguments>
                                       <expectedExceptions>
                                         <expectedException comparisonType="Contains">
-                                          <assertionValue class="value" valueClass="string">Field not found</assertionValue>
+                                          <assertionValue class="value" valueClass="string">not found</assertionValue>
                                         </expectedException>
                                       </expectedExceptions>
                                       <generatedParameters>
@@ -747,7 +747,9 @@
                                                 <argument id="value">
                                                   <value class="value" valueClass="string">2</value>
                                                 </argument>
-                                                <argument id="blur"/>
+                                                <argument id="blur">
+                                                  <value class="value" valueClass="boolean">true</value>
+                                                </argument>
                                                 <argument id="pressEnter"/>
                                               </arguments>
                                               <expectedExceptions>
@@ -812,7 +814,9 @@
                                                         <argument id="value">
                                                           <value class="value" valueClass="string">2</value>
                                                         </argument>
-                                                        <argument id="blur"/>
+                                                        <argument id="blur">
+                                                          <value class="value" valueClass="boolean">true</value>
+                                                        </argument>
                                                         <argument id="pressEnter"/>
                                                       </arguments>
                                                       <expectedExceptions>
@@ -881,7 +885,9 @@
                                                 <argument id="value">
                                                   <value class="value" valueClass="string">GA</value>
                                                 </argument>
-                                                <argument id="blur"/>
+                                                <argument id="blur">
+                                                  <value class="value" valueClass="boolean">true</value>
+                                                </argument>
                                                 <argument id="pressEnter"/>
                                               </arguments>
                                               <generatedParameters>
@@ -922,7 +928,9 @@
                                                 <argument id="value">
                                                   <value class="value" valueClass="string">GA_DEKALB</value>
                                                 </argument>
-                                                <argument id="blur"/>
+                                                <argument id="blur">
+                                                  <value class="value" valueClass="boolean">true</value>
+                                                </argument>
                                                 <argument id="pressEnter"/>
                                               </arguments>
                                               <generatedParameters>
@@ -994,7 +1002,9 @@
                                                 <argument id="value">
                                                   <value class="value" valueClass="string">GA_COBB</value>
                                                 </argument>
-                                                <argument id="blur"/>
+                                                <argument id="blur">
+                                                  <value class="value" valueClass="boolean">true</value>
+                                                </argument>
                                                 <argument id="pressEnter"/>
                                               </arguments>
                                               <generatedParameters>
@@ -1086,10 +1096,10 @@
                                       <clauses>
                                         <clause name="then" testItemId="873">
                                           <steps>
-                                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="874" title="Set the Type select to Buick">
+                                            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="874" title="Set the Make select to Buick">
                                               <arguments>
                                                 <argument id="locator">
-                                                  <value class="uiLocator" uri="ui:locator?name=Type"/>
+                                                  <value class="uiLocator" uri="ui:locator?name=Make"/>
                                                 </argument>
                                                 <argument id="interaction">
                                                   <value class="uiInteraction" uri="ui:interaction?name=set"/>
@@ -1110,7 +1120,7 @@
                                                   <value class="value" valueClass="boolean">false</value>
                                                 </argument>
                                                 <argument id="interactionDescription">
-                                                  <value class="value" valueClass="string">Set the Type select to Buick</value>
+                                                  <value class="value" valueClass="string">Set the Make select to Buick</value>
                                                 </argument>
                                                 <argument id="wait"/>
                                               </arguments>
