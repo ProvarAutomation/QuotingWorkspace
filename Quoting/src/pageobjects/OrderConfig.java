@@ -75,7 +75,7 @@ public class OrderConfig {
 	public WebElement SitelinkUsedAdvanced;
 	@BooleanType()
 	@FindByLabel(label = "Sitelink Used Pro OPT IN", labelType = LabelType.PrecedingCell, qualifierXpath = "input")
-	public WebElement SitelinkUsedProOptIn;
+	public WebElement SitelinkUsedProOPTIN;
 	@BooleanType()
 	@FindByLabel(label = "Sitelink Used Use Existing", labelType = LabelType.PrecedingCell, qualifierXpath = "input")
 	public WebElement SitelinkUsedUseExisting;
@@ -100,10 +100,7 @@ public class OrderConfig {
 	@TextType()
 	@FindByLabel(label = "Facebook.com/", labelType = LabelType.PrecedingCell, qualifierXpath = "input")
 	public WebElement FacebookDotComSlash;
-	@ChoiceListType(values = { @ChoiceListValue(value = "Additional Business"),
-			@ChoiceListValue(value = "Down Sell"),
-			@ChoiceListValue(value = "New Business"),
-			@ChoiceListValue(value = "Up Sell") })
+	@ChoiceListType(values = { @ChoiceListValue(value = "Additional Business"), @ChoiceListValue(value = "Down Sell"), @ChoiceListValue(value = "New Business"), @ChoiceListValue(value = "Up Sell") })
 	@FindByLabel(label = "Transaction Type", labelType = LabelType.PrecedingCell, qualifierXpath = "select")
 	public WebElement TransactionType;
 	@ChoiceListType(values = { @ChoiceListValue(value = "Yes"), @ChoiceListValue(value = "No") })
@@ -437,64 +434,7 @@ public class OrderConfig {
 	@ChoiceListType(values = { @ChoiceListValue(value = "Not Applicable") })
 	@FindByLabel(label = "Tier Governor Value", labelType = LabelType.PrecedingCell, qualifierXpath = "select")
 	public WebElement TierGovernorValue;
-	@ChoiceListType(values = { @ChoiceListValue(value = "Acura"),
-			@ChoiceListValue(value = "Alfa Romeo"),
-			@ChoiceListValue(value = "AMC"),
-			@ChoiceListValue(value = "HUMMER"),
-			@ChoiceListValue(value = "MINI"),
-			@ChoiceListValue(value = "Scion"),
-			@ChoiceListValue(value = "Aston Martin"),
-			@ChoiceListValue(value = "Audi"),
-			@ChoiceListValue(value = "Bentley"),
-			@ChoiceListValue(value = "Ferrari"),
-			@ChoiceListValue(value = "FIAT"),
-			@ChoiceListValue(value = "Lamborghini"),
-			@ChoiceListValue(value = "BMW"), @ChoiceListValue(value = "Lotus"),
-			@ChoiceListValue(value = "Maserati"),
-			@ChoiceListValue(value = "Maybach"),
-			@ChoiceListValue(value = "Buick"),
-			@ChoiceListValue(value = "Cadillac"),
-			@ChoiceListValue(value = "Chevrolet"),
-			@ChoiceListValue(value = "Chrysler"),
-			@ChoiceListValue(value = "Rolls-Royce"),
-			@ChoiceListValue(value = "DeLorean"),
-			@ChoiceListValue(value = "Datsun"),
-			@ChoiceListValue(value = "Dodge"),
-			@ChoiceListValue(value = "Eagle"),
-			@ChoiceListValue(value = "Ford"), @ChoiceListValue(value = "Geo"),
-			@ChoiceListValue(value = "GMC"), @ChoiceListValue(value = "Honda"),
-			@ChoiceListValue(value = "Hyundai"),
-			@ChoiceListValue(value = "Infiniti"),
-			@ChoiceListValue(value = "Isuzu"),
-			@ChoiceListValue(value = "Jaguar"),
-			@ChoiceListValue(value = "Jeep"), @ChoiceListValue(value = "Kia"),
-			@ChoiceListValue(value = "Lexus"),
-			@ChoiceListValue(value = "Lincoln"),
-			@ChoiceListValue(value = "Mazda"),
-			@ChoiceListValue(value = "Mercedes-Benz"),
-			@ChoiceListValue(value = "Mercury"),
-			@ChoiceListValue(value = "Mitsubishi"),
-			@ChoiceListValue(value = "Nissan"),
-			@ChoiceListValue(value = "Oldsmobile"),
-			@ChoiceListValue(value = "Plymouth"),
-			@ChoiceListValue(value = "Pontiac"),
-			@ChoiceListValue(value = "Porsche"),
-			@ChoiceListValue(value = "Land Rover"),
-			@ChoiceListValue(value = "Saab"),
-			@ChoiceListValue(value = "Saturn"),
-			@ChoiceListValue(value = "Subaru"),
-			@ChoiceListValue(value = "Suzuki"),
-			@ChoiceListValue(value = "Toyota"),
-			@ChoiceListValue(value = "Volkswagen"),
-			@ChoiceListValue(value = "Volvo"),
-			@ChoiceListValue(value = "Yugo"),
-			@ChoiceListValue(value = "Daewoo"),
-			@ChoiceListValue(value = "RAM"), @ChoiceListValue(value = "smart"),
-			@ChoiceListValue(value = "Tesla"),
-			@ChoiceListValue(value = "McLaren"),
-			@ChoiceListValue(value = "Fisker"),
-			@ChoiceListValue(value = "Freightliner"),
-			@ChoiceListValue(value = "SRT") })
+	@ChoiceListType(values = { @ChoiceListValue(value = "Acura"), @ChoiceListValue(value = "Alfa Romeo"), @ChoiceListValue(value = "AMC"), @ChoiceListValue(value = "HUMMER"), @ChoiceListValue(value = "MINI"), @ChoiceListValue(value = "Scion"), @ChoiceListValue(value = "Aston Martin"), @ChoiceListValue(value = "Audi"), @ChoiceListValue(value = "Bentley"), @ChoiceListValue(value = "Ferrari"), @ChoiceListValue(value = "FIAT"), @ChoiceListValue(value = "Lamborghini"), @ChoiceListValue(value = "BMW"), @ChoiceListValue(value = "Lotus"), @ChoiceListValue(value = "Maserati"), @ChoiceListValue(value = "Maybach"), @ChoiceListValue(value = "Buick"), @ChoiceListValue(value = "Cadillac"), @ChoiceListValue(value = "Chevrolet"), @ChoiceListValue(value = "Chrysler"), @ChoiceListValue(value = "Rolls-Royce"), @ChoiceListValue(value = "DeLorean"), @ChoiceListValue(value = "Datsun"), @ChoiceListValue(value = "Dodge"), @ChoiceListValue(value = "Eagle"), @ChoiceListValue(value = "Ford"), @ChoiceListValue(value = "Geo"), @ChoiceListValue(value = "GMC"), @ChoiceListValue(value = "Honda"), @ChoiceListValue(value = "Hyundai"), @ChoiceListValue(value = "Infiniti"), @ChoiceListValue(value = "Isuzu"), @ChoiceListValue(value = "Jaguar"), @ChoiceListValue(value = "Jeep"), @ChoiceListValue(value = "Kia"), @ChoiceListValue(value = "Lexus"), @ChoiceListValue(value = "Lincoln"), @ChoiceListValue(value = "Mazda"), @ChoiceListValue(value = "Mercedes-Benz"), @ChoiceListValue(value = "Mercury"), @ChoiceListValue(value = "Mitsubishi"), @ChoiceListValue(value = "Nissan"), @ChoiceListValue(value = "Oldsmobile"), @ChoiceListValue(value = "Plymouth"), @ChoiceListValue(value = "Pontiac"), @ChoiceListValue(value = "Porsche"), @ChoiceListValue(value = "Land Rover"), @ChoiceListValue(value = "Saab"), @ChoiceListValue(value = "Saturn"), @ChoiceListValue(value = "Subaru"), @ChoiceListValue(value = "Suzuki"), @ChoiceListValue(value = "Toyota"), @ChoiceListValue(value = "Volkswagen"), @ChoiceListValue(value = "Volvo"), @ChoiceListValue(value = "Yugo"), @ChoiceListValue(value = "Daewoo"), @ChoiceListValue(value = "RAM"), @ChoiceListValue(value = "smart"), @ChoiceListValue(value = "Tesla"), @ChoiceListValue(value = "McLaren"), @ChoiceListValue(value = "Fisker"), @ChoiceListValue(value = "Freightliner"), @ChoiceListValue(value = "SRT") })
 	@FindByLabel(label = "Tier Governor Advertised Make", labelType = LabelType.PrecedingCell, qualifierXpath = "select")
 	public WebElement TierGovernorAdvertisedMake;
 	@ChoiceListType(values = { @ChoiceListValue(value = "Dealer Managed"),
@@ -594,25 +534,15 @@ public class OrderConfig {
 	@FindByLabel(label = "Leaderboard New Artwork", labelType = LabelType.PrecedingCell, qualifierXpath = "select")
 	public WebElement LeaderboardNewArtwork;
 	@ChoiceListType(values = {
-			@ChoiceListValue(value = "Use GM New Car Templates"),
-			@ChoiceListValue(value = "Use GM Used Car Templates") })
+			@ChoiceListValue(value = "Use GM New Car Templates"), @ChoiceListValue(value = "Use GM Used Car Templates") })
 	@FindByLabel(label = "Leaderboard New Artwork (Gm packages)", labelType = LabelType.PrecedingCell, qualifierXpath = "select")
 	public WebElement LeaderboardNewArtworkGmpackages;
 	@ChoiceListType(values = {
-			@ChoiceListValue(value = "Co-Op Pre-Approval Case"),
-			@ChoiceListValue(value = "Enclosed"),
-			@ChoiceListValue(value = "Make simple logo"),
-			@ChoiceListValue(value = "Sent EQS"),
-			@ChoiceListValue(value = "Use Co-op Template"),
-			@ChoiceListValue(value = "Use Dealer Site"),
-			@ChoiceListValue(value = "Use Existing"),
-			@ChoiceListValue(value = "Use GM New Car Templates"),
-			@ChoiceListValue(value = "Use GM Used Car Templates") })
+			@ChoiceListValue(value = "Co-Op Pre-Approval Case"), @ChoiceListValue(value = "Enclosed"), @ChoiceListValue(value = "Make simple logo"), @ChoiceListValue(value = "Sent EQS"), @ChoiceListValue(value = "Use Co-op Template"), @ChoiceListValue(value = "Use Dealer Site"), @ChoiceListValue(value = "Use Existing"), @ChoiceListValue(value = "Use GM New Car Templates"), @ChoiceListValue(value = "Use GM Used Car Templates") })
 	@FindByLabel(label = "Leaderboard Used Artwork", labelType = LabelType.PrecedingCell, qualifierXpath = "select")
 	public WebElement LeaderboardUsedArtwork;
 	@ChoiceListType(values = {
-			@ChoiceListValue(value = "Use GM New Car Templates"),
-			@ChoiceListValue(value = "Use GM Used Car Templates") })
+			@ChoiceListValue(value = "Use GM New Car Templates"), @ChoiceListValue(value = "Use GM Used Car Templates") })
 	@FindByLabel(label = "Leaderboard Used Artwork (GM Packages)", labelType = LabelType.PrecedingCell, qualifierXpath = "select")
 	public WebElement LeaderboardUsedArtworkGMPackages;
 	@ChoiceListType(values = {
@@ -802,7 +732,7 @@ public class OrderConfig {
 	public WebElement LeaderboardNewCoOpPreApprovalCase;
 	@TextType()
 	@FindByLabel(label = "Leaderboard Used Click-thru URL", labelType = LabelType.PrecedingCell, qualifierXpath = "input")
-	public WebElement LeaderboardUsedClickThruURL;
+	public WebElement LeaderboardUsedClickthruURL;
 	@TextType()
 	@FindByLabel(label = "Leaderboard Used Co-Op Pre-Approval Case", labelType = LabelType.PrecedingCell, qualifierXpath = "input")
 	public WebElement LeaderboardUsedCoOpPreApprovalCase;

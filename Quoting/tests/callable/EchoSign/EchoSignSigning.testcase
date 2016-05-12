@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testCase id="9" registryId="c9793b55-a320-493b-a083-2857c3705177" visibility="Internal">
+<testCase id="10" registryId="c9793b55-a320-493b-a083-2857c3705177" visibility="Internal">
   <summary/>
   <steps>
-    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiConnect" name="UiConnect" testItemId="1" title="UI Connect: JasonJohn">
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiConnect" name="UiConnect" testItemId="1" title="UI Connect: Admin">
+      <tags>
+        <string>disabled</string>
+      </tags>
       <arguments>
         <argument id="connectionName">
-          <value class="value" valueClass="string">JasonJohn</value>
+          <value class="value" valueClass="string">Admin</value>
         </argument>
         <argument id="resultName">
           <value class="value" valueClass="string">EchoSign</value>
@@ -15,10 +18,23 @@
         </argument>
       </arguments>
     </apiCall>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiConnect" name="UiConnect" testItemId="9" title="UI Connect: EchoSign">
+      <arguments>
+        <argument id="connectionName">
+          <value class="value" valueClass="string">EchoSign</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">EchoSign2</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+      </arguments>
+    </apiCall>
     <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" name="UiWithScreen" testItemId="2" title="On EchoSign page">
       <arguments>
         <argument id="uiConnectionName">
-          <value class="value" valueClass="string">EchoSign</value>
+          <value class="value" valueClass="string">EchoSign2</value>
         </argument>
         <argument id="target">
           <value class="uiTarget" uri="ui:pageobject:target?pageId=pageobjects.EchoSign"/>

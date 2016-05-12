@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testProject selectedBrowserConfigurationName="Full Screen" selectedEnvironment="qUAT" selectedWebBrowserType="Chrome">
+<testProject selectedBrowserConfigurationName="Full Screen" selectedEnvironment="PreProd" selectedWebBrowserType="Chrome">
   <title>/Quoting/.testproject</title>
   <configPath>config</configPath>
   <testsPath>tests</testsPath>
@@ -16,6 +16,12 @@
     </environment>
     <environment name="qUAT">
       <summary>Quoting User Acceptance Testing</summary>
+    </environment>
+    <environment name="Stage">
+      <summary/>
+    </environment>
+    <environment name="PreProd">
+      <summary/>
     </environment>
   </environments>
   <variables>
@@ -49,6 +55,8 @@
             <connectionUrl envName="Quoting" secureStorageNodeId="1b9d7efb-9c42-4ae1-a35c-c5e732931a73" url="sf:user=provar.tester@coxauto.com.quoting;password={password};environment=SANDBOX"/>
             <connectionUrl envName="Pricing" secureStorageNodeId="bb430fa7-fde3-426a-b36f-4f67e6c691f7" url="sf:user=provar.tester@coxauto.com.pricing;password={password};environment=SANDBOX"/>
             <connectionUrl envName="qUAT" secureStorageNodeId="1452dcf2-c76c-4307-ae4e-9d33b6342a05" url="sf:user=provar.tester@coxauto.com.quat;password={password};environment=SANDBOX"/>
+            <connectionUrl envName="Stage" secureStorageNodeId="6b8d7740-b42b-4910-a573-65d7b557196f" url="sf:user=provar.tester@autotrader.com.stage;password={password};environment=SANDBOX"/>
+            <connectionUrl envName="PreProd" secureStorageNodeId="7b538c13-63eb-42ae-99aa-bc988b9b6e22" url="sf:user=provar.tester@autotrader.com.preprod;password={password};environment=SANDBOX"/>
           </connectionUrls>
         </connection>
         <connection name="JasonJohn">
@@ -57,12 +65,15 @@
             <connectionUrl url="sf:user=jason.john@autotradergroup.com.quoting;environment=PROD_DEV;logonAsConnection=Admin"/>
             <connectionUrl envName="qUAT" url="sf:user=jason.john@autotradergroup.com.quat;environment=PROD_DEV;logonAsConnection=Admin"/>
             <connectionUrl envName="Quoting" url="sf:user=jason.john@autotradergroup.com.quoting;environment=PROD_DEV;logonAsConnection=Admin"/>
+            <connectionUrl envName="Stage" url="sf:user=jason.john@autotradergroup.com.stage;environment=PROD_DEV;logonAsConnection=Admin"/>
           </connectionUrls>
         </connection>
         <connection name="QUATSalesUser">
           <summary/>
           <connectionUrls>
             <connectionUrl url="sf:user=dof.sales.test@atg.com.quat;environment=PROD_DEV;logonAsConnection=Admin"/>
+            <connectionUrl envName="Stage" url="sf:user=dof.sales.test@atg.com.stage;environment=PROD_DEV;logonAsConnection=Admin"/>
+            <connectionUrl envName="PreProd" url="sf:user=brad.weber@autotrader.com.prod.preprod;environment=PROD_DEV;logonAsConnection=Admin"/>
           </connectionUrls>
         </connection>
         <connection name="PricingTeam">
@@ -73,6 +84,13 @@
             <connectionUrl envName="qUAT" url="sf:user=aster.lakene@autotrader.com.quat;environment=PROD_DEV;logonAsConnection=Admin"/>
           </connectionUrls>
         </connection>
+        <connection name="BradWeber">
+          <summary/>
+          <connectionUrls>
+            <connectionUrl url="sf:user=brad.weber@autotrader.com.prod.stage;environment=PROD_DEV;logonAsConnection=Admin"/>
+            <connectionUrl envName="PreProd" url="sf:user=brad.weber@autotrader.com.prod.preprod;environment=PROD_DEV;logonAsConnection=Admin"/>
+          </connectionUrls>
+        </connection>
       </connections>
     </connectionClass>
     <connectionClass name="google">
@@ -81,6 +99,16 @@
           <summary>AutoTrader test user email</summary>
           <connectionUrls>
             <connectionUrl secureStorageNodeId="c4fe27d7-070f-470a-9099-fcf238af23b1" url="google:user=autotradertestuser@gmail.com;accessToken={accessToken};refreshToken={refreshToken};expiry=1457962006773"/>
+          </connectionUrls>
+        </connection>
+      </connections>
+    </connectionClass>
+    <connectionClass name="ui">
+      <connections>
+        <connection name="EchoSign">
+          <summary/>
+          <connectionUrls>
+            <connectionUrl url="se:baseUrl=http://www.echosign.com"/>
           </connectionUrls>
         </connection>
       </connections>

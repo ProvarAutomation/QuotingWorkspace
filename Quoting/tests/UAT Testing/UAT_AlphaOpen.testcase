@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testCase id="0">
+<testCase id="3">
   <summary/>
   <steps>
     <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" name="StepGroup" testItemId="11" title="Read Order Product List">
@@ -934,9 +934,10 @@
                                         <argument id="interactionDescription">
                                           <value class="value" valueClass="string">Click the QUOTE.QUOTENUMBER link</value>
                                         </argument>
+                                        <argument id="wait"/>
                                       </arguments>
                                       <generatedParameters>
-                                        <apiParam group="value" name="hover" title="Hover before Clicking">
+                                        <apiParam group="value" name="hover" seq="10000" title="Hover before Clicking">
                                           <summary>Whether the mouse should hover over the field before it is clicked.</summary>
                                           <type>
                                             <booleanType/>
@@ -965,7 +966,7 @@
                                   <value class="uiTarget" uri="sf:ui:target?object=Quote&amp;action=View&amp;recordType=Quote+Not+Synced"/>
                                 </argument>
                                 <argument id="navigate">
-                                  <value class="value" valueClass="string">Always</value>
+                                  <value class="value" valueClass="string">Dont</value>
                                 </argument>
                                 <argument id="sfUiTargetObjectId">
                                   <value class="value" valueClass="string">0Q018000000DdD5</value>
@@ -1168,33 +1169,6 @@
                                       </generatedParameters>
                                     </apiCall>
                                     <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="987" title="Click the Calculate button">
-                                      <arguments>
-                                        <argument id="locator">
-                                          <value class="uiLocator" uri="ui:locator?name=calculate"/>
-                                        </argument>
-                                        <argument id="interaction">
-                                          <value class="uiInteraction" uri="ui:interaction?name=action"/>
-                                        </argument>
-                                        <argument id="interactionDescription">
-                                          <value class="value" valueClass="string">Click the Calculate button</value>
-                                        </argument>
-                                        <argument id="wait">
-                                          <value class="uiWait" uri="ui:wait:timed?seconds=5"/>
-                                        </argument>
-                                        <argument id="captureBefore"/>
-                                        <argument id="captureAfter"/>
-                                        <argument id="hover"/>
-                                      </arguments>
-                                      <generatedParameters>
-                                        <apiParam group="value" name="hover" seq="10000" title="Hover before Clicking">
-                                          <summary>Whether the mouse should hover over the field before it is clicked.</summary>
-                                          <type>
-                                            <booleanType/>
-                                          </type>
-                                        </apiParam>
-                                      </generatedParameters>
-                                    </apiCall>
-                                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" name="UiDoAction" testItemId="986" title="Click the Calculate button">
                                       <arguments>
                                         <argument id="locator">
                                           <value class="uiLocator" uri="ui:locator?name=calculate"/>
